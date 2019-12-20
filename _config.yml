@@ -57,5 +57,5 @@ excerpt_separator: "\n\n\n\n"
 
 # paginate
 plugins: [jekyll-paginate]
-paginate: 6
+paginate: 8
 port: 4001
