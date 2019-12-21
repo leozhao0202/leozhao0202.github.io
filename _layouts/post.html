@@ -72,20 +72,7 @@ layout: default
 
     </div>
 
-<div id="gitmentContainer"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-    owner: 'leozhao0202',
-    repo: 'leozhao0202.github.io',
-    oauth: {
-        client_id: '6e04c01032c117e3c2db',
-        client_secret: '1b2b470871a9a9055646f223a82c1f901a9fc07d',
-    },
-});
-gitment.render('gitmentContainer');
-</script>
+
 
     <button class="anchor"><i class="fa fa-anchor"></i></button>
     <div class="right">
@@ -103,6 +90,21 @@ gitment.render('gitmentContainer');
                     <li><a href="#comments">Comments</a></li>
                 </ul>
             </div>
+
+            <div id="gitmentContainer"></div>
+                <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+                <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+                <script>
+                var gitment = new Gitment({
+                    owner: 'leozhao0202',
+                    repo: 'leozhao0202.github.io',
+                    oauth: {
+                        client_id: '6e04c01032c117e3c2db',
+                        client_secret: '1b2b470871a9a9055646f223a82c1f901a9fc07d',
+                    },
+                });
+                gitment.render('gitmentContainer');
+                </script>
             <!-- 其他div框放到这里 -->
             <!-- <div class="side">bbbb</div> -->
         </div>
