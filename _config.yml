@@ -44,8 +44,9 @@ kramdown:
   input: GFM
   syntax_highlighter: Rouge
 
-# port
-# port: 1234
+# comments
+
+gitalk_shortname: leozhao0202
 
 # url
 category_dir: category/

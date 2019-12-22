@@ -66,25 +66,6 @@ layout: default
 
         {% include previousAndNext.html %}
 
-        <!-- Link Gitalk 的支持文件  -->
-        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-        <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
-        <div id="gitalk-container"></div>
-        <script type="text/javascript">
-            var gitalk = new Gitalk({
-            // gitalk的主要参数
-                clientID: '6e04c01032c117e3c2db',
-                clientSecret: '1b2b470871a9a9055646f223a82c1f901a9fc07d',
-                repo: 'leozhao0202.github.io',
-                owner: 'leozhao0202',
-                admin: ['leozhao0202'],
-                id:window.location.pathname,
-            });
-
-            gitalk.render('gitalk-container');
-        </script> 
-        <!-- Gitalk end -->
-
         {% include comments.html %}
 
 
