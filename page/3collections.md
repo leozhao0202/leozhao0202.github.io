@@ -70,6 +70,3 @@ type: page
 
     首页的卡片翻动效果非常赞。
 
-## Comments
-
-{% include comments.html %}
