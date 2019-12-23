@@ -3,7 +3,7 @@ layout: post
 title:  "hello jekyll!"
 date:   2015-02-10 15:14:54
 categories: jekyll
-tags: jekyll
+tags: Jekyll
 excerpt: 这是fork xudailong的page时，里面默认的一篇文章，没什么意义，留个纪念吧。
 mathjax: true
 ---
