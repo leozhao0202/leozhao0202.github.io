@@ -3,6 +3,7 @@ layout:     post
 title:      重新开始研究技术的一点感想！ 
 subtitle:   40岁迷惘老男人的遐思  
 date:       2019-12-21 
+categories: 生活感悟
 author:     Leo Zhao
 header-img: 
 catalog: true                       # 是否归档

@@ -3,6 +3,7 @@ layout:     post
 title:      Github+Jekyll 自建博客相关事项
 subtitle:   技术控
 date:       2019-12-23
+categories: 技术生活
 author:     Leo Zhao
 header-img: 
 catalog: true                       # 是否归档
