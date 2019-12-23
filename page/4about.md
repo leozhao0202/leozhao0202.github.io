@@ -11,7 +11,7 @@ type: page
 ## 关于我
 
 <div id="headpic" align="left">
-    <img src="../_images/head.jpg" />
+    <img src="https://github.com/leozhao0202/leozhao0202.github.io/blob/master/_images/head.jpg?raw=true" />
 
 一个IT人。
 
