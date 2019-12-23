@@ -10,16 +10,18 @@ catalog: true                       # 是否归档
 tags:                               #标签
     - 技术控
     - Jekyll
-excerpt: 近些日子重新开始培养热血，从研究技术开始。为了督促自己，先从Github上建个个人的博客吧。
+excerpt_separator: ~~~ 
 mathjax: true
 ---
 
+近些日子重新开始培养热血，从研究技术开始。为了督促自己，先从Github上建个个人的博客吧。
+
 网上有无数此类相关的文章，讲述从如何申请Github账号，到安装Github客户端，使用Git Bash，再到本机安装Jekyll，然后同步网站。
 
-我挑了一篇 [《Github搭建个人博客（2019最新版,亲测）》](https://blog.csdn.net/xudailong_blog/article/details/78762262），大家也可以参考这篇，比较详细。
+我挑了一篇 [《Github搭建个人博客（2019最新版,亲测）》][https://blog.csdn.net/xudailong_blog/article/details/78762262]，大家也可以参考这篇，比较详细。
 
 当然，万物皆无常事，凡事都有意外。这当中还是遇到很多小问题，一时间也搞得焦头烂额，约莫搞了两天才算准备停当。下面就简略讲讲，给大家一个参考：
-
+~~~
 1. #### 申请Github账号，建立仓库（Repositories）
 
    这个没啥难度，也没遇到问题，一步一步来就是。
