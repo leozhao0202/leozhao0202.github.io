@@ -33,13 +33,13 @@ tags:                               #标签
 
       *我的系统是windows，所以下载RubyInstaller*
 
-      ![ruby下载1](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/_images/20131223_Ruby下载1.PNG?raw=true)
+      ![ruby下载1](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/_images/20191223_ruby%E4%B8%8B%E8%BD%BD1.PNG?raw=true)
 
-      ![ruby下载2](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/_images/20191223_ruby下载2.PNG?raw=true)
+      ![ruby下载2](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/_images/20191223_ruby%E4%B8%8B%E8%BD%BD2.PNG?raw=true)
 
       *我的系统是64位，诸位请自选*
 
-      ![ruby下载3](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/_images/20191223_ruby下载3.PNG?raw=true)
+      ![ruby下载3](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/_images/20191223_ruby%E4%B8%8B%E8%BD%BD3.PNG?raw=true)
 
       **注意**
 
