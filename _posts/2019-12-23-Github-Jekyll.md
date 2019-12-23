@@ -18,7 +18,7 @@ mathjax: true
 
 网上有无数此类相关的文章，讲述从如何申请Github账号，到安装Github客户端，使用Git Bash，再到本机安装Jekyll，然后同步网站。
 
-我挑了一篇 [《Github搭建个人博客（2019最新版,亲测）》][https://blog.csdn.net/xudailong_blog/article/details/78762262]，大家也可以参考这篇，比较详细。
+我挑了一篇 [Github搭建个人博客（2019最新版,亲测）](https://blog.csdn.net/xudailong_blog/article/details/78762262/)，大家也可以参考这篇，比较详细。
 
 当然，万物皆无常事，凡事都有意外。这当中还是遇到很多小问题，一时间也搞得焦头烂额，约莫搞了两天才算准备停当。下面就简略讲讲，给大家一个参考：
 ~~~
