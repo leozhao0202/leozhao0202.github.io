@@ -33,13 +33,13 @@ tags:                               #标签
 
       *我的系统是windows，所以下载RubyInstaller*
 
-      ![ruby下载1](\_images\20191223_ruby下载1.PNG)
+      ![ruby下载1](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/_images/20131223_Ruby下载1.PNG?raw=true)
 
-      ![ruby下载2](\_images\20191223_ruby下载2.PNG)
+      ![ruby下载2](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/_images/20191223_ruby下载2.PNG?raw=true)
 
       *我的系统是64位，诸位请自选*
 
-      ![ruby下载3](\_images\20191223_ruby下载3.PNG)
+      ![ruby下载3](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/_images/20191223_ruby下载3.PNG?raw=true)
 
       **注意**
 
@@ -47,7 +47,7 @@ tags:                               #标签
 
       2. Ruby安装完成后，会有一个弹出的命令框，提示安装msys64，建议**直接回车**即可，时间比较长，但一定要等，安装完命令框会自己关掉
 
-         ![20191223_installMSYS2](\_images\20191223_installMSYS2.PNG)
+         ![20191223_installMSYS2](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/_images/20191223_installMSYS2.PNG?raw=true)
 
    2. 安装Ruby Gems
 
@@ -70,11 +70,11 @@ tags:                               #标签
 
       **注意** myblog为我的博客的文件夹名，以上命令完成后，D:\JekyllBlogs文件夹内会生成一个myblog的文件夹，其内有Jekyll博客网站的的页面
 
-      ![20131223_JekyllBlog](\_images\20131223_JekyllBlog.PNG)
+      ![20131223_JekyllBlog](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/_images/20131223_JekyllBlog.PNG?raw=true)
 
 3. #### 初始化博客个人信息，修改_config.yml
 
-   ​		![20191223_config](\_images\20191223_config.PNG)
+   ​		![20191223_config](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/_images/20191223_config.PNG?raw=true)
 
 
 
