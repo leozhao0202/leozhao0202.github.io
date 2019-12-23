@@ -8,11 +8,10 @@ type: page
 
 * content
 {:toc}
-
-<img style="float: left;" src="../_images/head.jpg") >
-
 ## 关于我
 
+<div id="headpic" align="left">
+    <img src="../_images/head.jpg" />
 
 一个IT人。
 
