@@ -10,9 +10,6 @@ type: page
 {:toc}
 ## 关于我
 
-<div id="headpic" align="left">
-    <img src="https://github.com/leozhao0202/leozhao0202.github.io/blob/master/_images/head.jpg?raw=true" />
-
 一个IT人。
 
 主要能力集中在后端业务逻辑开发以及数据库操作包开发，有些时候用户的需求是真的真的很有挑战性的呀。当然，由于公司没有前端开发人员，所以前端页面开发的工作也由我自己来-_-! 
