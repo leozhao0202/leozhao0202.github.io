@@ -1,3 +1,4 @@
+---
 layout:     post                   
 title:      YAML语言基础
 subtitle:   YAML 
@@ -11,7 +12,7 @@ tags:                               #标签
     - YAML语言
 excerpt_separator: ~~~ 
 mathjax: true
-
+---
 
 
 YAML 是专门用来写配置文件的语言，非常简洁和强大，远比 JSON 格式方便。 本文转自[YAML 语言教程](http://www.ruanyifeng.com/blog/2016/07/yaml.html)。
