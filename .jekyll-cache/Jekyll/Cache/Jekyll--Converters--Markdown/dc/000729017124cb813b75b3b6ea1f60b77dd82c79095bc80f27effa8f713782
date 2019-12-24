@@ -1,0 +1,5 @@
+I"�<h1 id="配置">配置</h1>
+
+<p>Jekyll允许你很轻松的设计你的网站，这很大程度上归功于灵活强大的配置功能。既可以在网站根目录下的 <code>_config.yml</code> 文件中配置，也可以通过<strong>命令行的标记</strong>来配置（<strong>&lt;font color=#0099ff&gt;就是说，可以在命令框（CMD）中通过类似<code>jekyll serve --trace</code>这样的语句来配置&lt;/font&gt;</strong>）。</p>
+
+:ET

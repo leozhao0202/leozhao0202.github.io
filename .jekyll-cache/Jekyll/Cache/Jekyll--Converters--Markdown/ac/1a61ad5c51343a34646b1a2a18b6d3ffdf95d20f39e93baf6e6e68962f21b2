@@ -1,66 +1,47 @@
----
-layout:     post                   
-title:      Jekyll 研究笔记（二）
-subtitle:   本章主要讲Jekyll配置以及本地服务运行参数
-date:       2019-12-24
-categories: 技术生活
-author:     Leo Zhao
-header-img: 
-catalog: true                       # 是否归档
-tags:                               #标签
-    - 技术控
-    - Jekyll
-excerpt_separator: ~~~ 
-mathjax: true
----
+I"�A<h1 id="配置">配置</h1>
 
+<p>Jekyll允许你很轻松的设计你的网站，这很大程度上归功于灵活强大的配置功能。既可以在网站根目录下的 <code>_config.yml</code> 文件中配置，也可以通过<strong>命令行的标记</strong>来配置（<strong>&lt;font color=#0099ff&gt;就是说，可以在命令框（CMD）中通过类似<code>jekyll serve --trace</code>这样的语句来配置&lt;/font&gt;</strong>）。</p>
 
-# 配置
-
-Jekyll允许你很轻松的设计你的网站，这很大程度上归功于灵活强大的配置功能。既可以在网站根目录下的 `_config.yml` 文件中配置，也可以通过**命令行的标记**来配置（**<font color=#0099ff>就是说，可以在命令框（CMD）中通过类似`jekyll serve --trace`这样的语句来配置</font>**）。
-
-
-~~~
-### 全局配置（Global Configuration）
+<pre><code>### 全局配置（Global Configuration）
 
 下表中列举了所有 Jekyll 可用的设置，和多种多样的 `选项Options` (配置文件中) 及 `标记Tags` (命令行中)。
 
 | 设置                                                         | 选项 和 标记                                                 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **Site Source **<br>修改 Jekyll 读取文件的路径。             | `source: DIR``-s, --source DIR`                              |
-| **Site Destination**<br>修改 Jekyll 写入文件的路径。<font color=#0099ff>**就是生成站点的地方。**</font> | `destination: DIR``-d, --destination DIR`                    |
-| **Safe**<br>禁用 [自定义插件](http://jekyllcn.com/docs/plugins/)。 | `safe: BOOL``--safe`                                         |
-| **Exclude**<br>转换时排除某些文件、文件夹。<font color=#0099ff>**意思就是凡是在exclude中定义的文件夹或文件，都不会转换并在_site文件夹内生成最终页面或部件。**</font> | `exclude: [DIR, FILE, ...]`                                  |
-| **Include**<br>转换时强制包含某些文件、文件夹。所有. 开头的文件是被默认排除的，比如`.htaccess` 是个典型的例子。<font color=#0099ff>**`htaccess`是Apache的配置文件，因此即便你定义了一个以.开头的文件并把它在Include中定义，它仍然不会被转换并生成。**</font> | `include: [DIR, FILE, ...]`                                  |
-| **Keep files**<br/>当每次生成站点时，`destination`（默认_site文件夹）中的一切会被清理，如果你想保留某些文件，可以在此定义。例如由你的构建工具生成的文件或者资源。 | `keep_files: [DIR, FILE, ...]`                               |
-| **Time Zone**<br/>设置时区，这个设置作用于 `TZ` 变量， Ruby 用它来处理日期和时间。 [IANA Time Zone Database](http://en.wikipedia.org/wiki/Tz_database) 里边的都有效，比如 `America/New_York` 。默认值为操作系统的时区。 | `timezone: TIMEZONE`                                         |
-| **Encoding**<br/>设置文件的编码，仅 Ruby 1.9 以上可用。2.0.0　版本以后默认值为 utf-8，之前版本默认值为 nil，使用 Ruby 默认的 `ASCII-8BIT`。可以用命令 `ruby -e 'puts Encoding::list.join("\n")'` 查看 Ruby 可用的编码。 | `encoding: ENCODING`                                         |
-| **Defaults**<br/>设置 [YAML 头信息](http://jekyllcn.com/docs/frontmatter/) 的默认值。<font color=#0099ff>**这个以后会大讲特讲的。**</font> | [详细](http://jekyllcn.com/docs/configuration/#front-matter-defaults) |
+| **Site Source **&lt;br&gt;修改 Jekyll 读取文件的路径。             | `source: DIR``-s, --source DIR`                              |
+| **Site Destination**&lt;br&gt;修改 Jekyll 写入文件的路径。&lt;font color=#0099ff&gt;**就是生成站点的地方。**&lt;/font&gt; | `destination: DIR``-d, --destination DIR`                    |
+| **Safe**&lt;br&gt;禁用 [自定义插件](http://jekyllcn.com/docs/plugins/)。 | `safe: BOOL``--safe`                                         |
+| **Exclude**&lt;br&gt;转换时排除某些文件、文件夹。&lt;font color=#0099ff&gt;**意思就是凡是在exclude中定义的文件夹或文件，都不会转换并在_site文件夹内生成最终页面或部件。**&lt;/font&gt; | `exclude: [DIR, FILE, ...]`                                  |
+| **Include**&lt;br&gt;转换时强制包含某些文件、文件夹。所有. 开头的文件是被默认排除的，比如`.htaccess` 是个典型的例子。&lt;font color=#0099ff&gt;**`htaccess`是Apache的配置文件，因此即便你定义了一个以.开头的文件并把它在Include中定义，它仍然不会被转换并生成。**&lt;/font&gt; | `include: [DIR, FILE, ...]`                                  |
+| **Keep files**&lt;br/&gt;当每次生成站点时，`destination`（默认_site文件夹）中的一切会被清理，如果你想保留某些文件，可以在此定义。例如由你的构建工具生成的文件或者资源。 | `keep_files: [DIR, FILE, ...]`                               |
+| **Time Zone**&lt;br/&gt;设置时区，这个设置作用于 `TZ` 变量， Ruby 用它来处理日期和时间。 [IANA Time Zone Database](http://en.wikipedia.org/wiki/Tz_database) 里边的都有效，比如 `America/New_York` 。默认值为操作系统的时区。 | `timezone: TIMEZONE`                                         |
+| **Encoding**&lt;br/&gt;设置文件的编码，仅 Ruby 1.9 以上可用。2.0.0　版本以后默认值为 utf-8，之前版本默认值为 nil，使用 Ruby 默认的 `ASCII-8BIT`。可以用命令 `ruby -e 'puts Encoding::list.join("\n")'` 查看 Ruby 可用的编码。 | `encoding: ENCODING`                                         |
+| **Defaults**&lt;br/&gt;设置 [YAML 头信息](http://jekyllcn.com/docs/frontmatter/) 的默认值。&lt;font color=#0099ff&gt;**这个以后会大讲特讲的。**&lt;/font&gt; | [详细](http://jekyllcn.com/docs/configuration/#front-matter-defaults) |
 
 ##### Destination 文件夹会在站点建立时被清理
 
-**`<destination>`** 的内容默认**在站点建立时会被自动清理**。不是你创建的文件和文件夹会被删除。你想在 `<destination>` 保留的文件和文件夹应在 `<keep_files>` 里指定。
+**`&lt;destination&gt;`** 的内容默认**在站点建立时会被自动清理**。不是你创建的文件和文件夹会被删除。你想在 `&lt;destination&gt;` 保留的文件和文件夹应在 `&lt;keep_files&gt;` 里指定。
 
-不要把`<destination>` 设置到重要的路径上，而应该把它作为一个暂存区域，从那里复制文件到您的web服务器。
+不要把`&lt;destination&gt;` 设置到重要的路径上，而应该把它作为一个暂存区域，从那里复制文件到您的web服务器。
 
 ### 编译选项（Build Command Options）
 
-<font color=crimson>**这部分内容，我是没用过，因此暂时也没啥研究，有需要的同学请自便。**</font>
+&lt;font color=crimson&gt;**这部分内容，我是没用过，因此暂时也没啥研究，有需要的同学请自便。**&lt;/font&gt;
 
 | 设置                                                         | 选项 和 标记                           |
 | ------------------------------------------------------------ | -------------------------------------- |
-| **Regeneration**<br>允许文件修改时自动重新生成网站。         | `-w, --watch`                          |
-| **Configuration<br/>**手动设置配置文件，可设置多个，且后边的配置会覆盖前边的。 | `--config FILE1[,FILE2,...]`           |
-| **Drafts**<br/>处理草稿                                      | `--drafts`                             |
-| **Environment**<br/>build 时使用特定的环境变量。             | `JEKYLL_ENV=production`                |
-| **Future**<br/>用将来的日期发布文章                          | `future: BOOL``--future`               |
-| **LSI<br/>**为相关文章生成索引                               | `lsi: BOOL``--lsi`                     |
-| **Limit Posts<br/>**限制文章的数量                           | `limit_posts: NUM``--limit_posts NUM`  |
-| **Force polling<br/>**强制使用轮询。                         | `--force_polling`                      |
-| **Verbose output**<br/>显示详细输出。                        | `-V, --verbose`                        |
-| **Silence Output**<br/>在编译期间不显示的正常输出。          | `-q, --quiet`                          |
-| **Incremental build<br/>**启用实验特性 incremental build。Incremental build 只重建修改过的 posts 和 pages，对大型网站有显著的性能提升，但在特定情况下也会影响网站生成。 | `incremental: BOOL``-I, --incremental` |
-| **Liquid profiler<br/>**生成一个Liquid概述文档来帮助你发现性能瓶颈 | `profile: BOOL``--profile`             |
+| **Regeneration**&lt;br&gt;允许文件修改时自动重新生成网站。         | `-w, --watch`                          |
+| **Configuration&lt;br/&gt;**手动设置配置文件，可设置多个，且后边的配置会覆盖前边的。 | `--config FILE1[,FILE2,...]`           |
+| **Drafts**&lt;br/&gt;处理草稿                                      | `--drafts`                             |
+| **Environment**&lt;br/&gt;build 时使用特定的环境变量。             | `JEKYLL_ENV=production`                |
+| **Future**&lt;br/&gt;用将来的日期发布文章                          | `future: BOOL``--future`               |
+| **LSI&lt;br/&gt;**为相关文章生成索引                               | `lsi: BOOL``--lsi`                     |
+| **Limit Posts&lt;br/&gt;**限制文章的数量                           | `limit_posts: NUM``--limit_posts NUM`  |
+| **Force polling&lt;br/&gt;**强制使用轮询。                         | `--force_polling`                      |
+| **Verbose output**&lt;br/&gt;显示详细输出。                        | `-V, --verbose`                        |
+| **Silence Output**&lt;br/&gt;在编译期间不显示的正常输出。          | `-q, --quiet`                          |
+| **Incremental build&lt;br/&gt;**启用实验特性 incremental build。Incremental build 只重建修改过的 posts 和 pages，对大型网站有显著的性能提升，但在特定情况下也会影响网站生成。 | `incremental: BOOL``-I, --incremental` |
+| **Liquid profiler&lt;br/&gt;**生成一个Liquid概述文档来帮助你发现性能瓶颈 | `profile: BOOL``--profile`             |
 
 
 
@@ -68,17 +49,17 @@ Jekyll允许你很轻松的设计你的网站，这很大程度上归功于灵�
 
 除了下边的选项， `serve` 命令还可以接收 `build` 的选项，在运行网站服务之前的编译时候使用。
 
-<font color=#0099ff>**在本地启动jekyll服务时，可以挂在以下命令项或是上面build的命令项，已达到相应的目的。**</font>
+&lt;font color=#0099ff&gt;**在本地启动jekyll服务时，可以挂在以下命令项或是上面build的命令项，已达到相应的目的。**&lt;/font&gt;
 
 | 设置                                                         | 选项 和 标记                      |
 | ------------------------------------------------------------ | --------------------------------- |
-| **Local Server Port**<br/>监听所给的端口                     | `port: PORT``--port PORT`         |
-| **Local Server Hostname**<br/>监听所给的主机名               | `host: HOSTNAME``--host HOSTNAME` |
-| **Base URL**<br/>网站的根路径                                | `baseurl: URL``--baseurl URL`     |
-| **Detach**<br/>从终端命令行中分离出来                        | `detach: BOOL``-B, --detach`      |
-| **Skips the initial site build.**<br/>跳过服务器启动之前，网站的初始化。 | `--skip-initial-build`            |
-| **X.509 (SSL) Private Key**<br/>SSL私钥                      | `--ssl-key`                       |
-| **X.509 (SSL) Certificate**<br/>SSL公证                      | `--ssl-cert`                      |
+| **Local Server Port**&lt;br/&gt;监听所给的端口                     | `port: PORT``--port PORT`         |
+| **Local Server Hostname**&lt;br/&gt;监听所给的主机名               | `host: HOSTNAME``--host HOSTNAME` |
+| **Base URL**&lt;br/&gt;网站的根路径                                | `baseurl: URL``--baseurl URL`     |
+| **Detach**&lt;br/&gt;从终端命令行中分离出来                        | `detach: BOOL``-B, --detach`      |
+| **Skips the initial site build.**&lt;br/&gt;跳过服务器启动之前，网站的初始化。 | `--skip-initial-build`            |
+| **X.509 (SSL) Private Key**&lt;br/&gt;SSL私钥                      | `--ssl-key`                       |
+| **X.509 (SSL) Certificate**&lt;br/&gt;SSL公证                      | `--ssl-cert`                      |
 
 ##### 不要在配置文件中使用 tab 制表符，
 
@@ -112,17 +93,17 @@ JEKYLL_ENV=production jekyll build
 
 在 build 命令中指定参数，当你迁移环境时，可以避免更改你配置文件中的值。
 
-<font color=#0099ff>**这个东西在工作中是很有必要的，有时候一个项目会设置N多个环境，为了避免混淆，不要懒惰哟。**</font>
+&lt;font color=#0099ff&gt;**这个东西在工作中是很有必要的，有时候一个项目会设置N多个环境，为了避免混淆，不要懒惰哟。**&lt;/font&gt;
 
 
 
 ## 头信息默认值
 
-<font color=#0099ff>**这里是重点内容，请仔细阅读学习，如果没读懂，那不是我的问题，请自行再读一遍。**</font>
+&lt;font color=#0099ff&gt;**这里是重点内容，请仔细阅读学习，如果没读懂，那不是我的问题，请自行再读一遍。**&lt;/font&gt;
 
 通过使用 [YAML 头信息](http://jekyllcn.com/docs/frontmatter/)可以定义站点的页面和文章的参数。
 
-设置一些例如布局或者自定义标题，亦或是给文章指定一个更精确的日期/时间，这都可以通过在页面或文章的头信息设置参数来实现。<font color=#0099ff>**布局，就是layout，也就是文章外面穿的那套礼服。**</font>
+设置一些例如布局或者自定义标题，亦或是给文章指定一个更精确的日期/时间，这都可以通过在页面或文章的头信息设置参数来实现。&lt;font color=#0099ff&gt;**布局，就是layout，也就是文章外面穿的那套礼服。**&lt;/font&gt;
 
 很多时候，你会发现你在重复填写很多配置项。在每个文件里设置相同的布局，对每篇文章添加相同的分类等等。你还需要添加自定义变量，如作者名，而这对于你博客上大部分的文章来说是相同的。
 
@@ -182,7 +163,7 @@ defaults:
 
 例如，以上所设置的默认值表明，所有的文章都会使用 `my-site` 布局；任何在 `projects/` 文件夹下的 html 文件会使用 `project` 布局；拥有者为 `Mr. Hyde` 的页面的布局也被设为 `project` 。
 
-<font color=#0099ff>**通过上面的文字可以看出，posts代表的就是文章，pages代表的就是html页面。**</font>
+&lt;font color=#0099ff&gt;**通过上面的文字可以看出，posts代表的就是文章，pages代表的就是html页面。**&lt;/font&gt;
 
 ```yaml
 collections:
@@ -200,9 +181,9 @@ defaults:
 
 在上面这个例子中，在集合（Collections）中命名为 `my_collection` 的集合的布局被设为 `default` 。
 
-<font color=#0099ff size=5>**通配符模式在默认值中的应用**</font>
+&lt;font color=#0099ff size=5&gt;**通配符模式在默认值中的应用**&lt;/font&gt;
 
-<font color=#0099ff>你还可以在设置默认值时使用通配符。 比如，为`section`文件夹内的任意一个子文件件中的 `special-page.html` 设置`specific-layout`布局。（需要至少jekyll 3.7.0版本）</font>
+&lt;font color=#0099ff&gt;你还可以在设置默认值时使用通配符。 比如，为`section`文件夹内的任意一个子文件件中的 `special-page.html` 设置`specific-layout`布局。（需要至少jekyll 3.7.0版本）&lt;/font&gt;
 
 ```yaml
 collections:
@@ -248,7 +229,7 @@ The post text goes here...
 
 在站点建立时，`projects/foo_project.md` 的布局会是 `foobar`而不是`project` ，`author` 是 `John Smith`而不是 `Mr. Hyde` 。
 
-<font color=#0099ff>**换言之就是说，`_config.yml`中定义的默认值其实优先级是最低的。**</font>
+&lt;font color=#0099ff&gt;**换言之就是说，`_config.yml`中定义的默认值其实优先级是最低的。**&lt;/font&gt;
 
 
 
@@ -258,7 +239,7 @@ Jekyll 默认使用以下的配置运行，当然你也可以在配置文件或�
 
 ##### 有两个 kramdown 的选项不支持
 
-注意，由于没有被包含到 kramdown HTML 转换器中， Jekyll 当前不支持**`remove_block_html_tags`** 和 **`remove_span_html_tags`**。<font color=#0099ff>**啥玩意？不支持就不支持呗。**</font>
+注意，由于没有被包含到 kramdown HTML 转换器中， Jekyll 当前不支持**`remove_block_html_tags`** 和 **`remove_span_html_tags`**。&lt;font color=#0099ff&gt;**啥玩意？不支持就不支持呗。**&lt;/font&gt;
 
 ```yaml
 # 目录结构
@@ -332,11 +313,11 @@ kramdown:
     coderay_css:               style
 ```
 
-<font color=#0099ff size=4>**以上一大坨，之所以叫默认设置，就是说你不去改它，世界也运行得挺美好。因此，除非你有确凿的需求，那么就保留默认即可。**</font>
+&lt;font color=#0099ff size=4&gt;**以上一大坨，之所以叫默认设置，就是说你不去改它，世界也运行得挺美好。因此，除非你有确凿的需求，那么就保留默认即可。**&lt;/font&gt;
 
 
 
-<font color=crimson size=5>**以下三个东东，我自我感觉目前用不到，估计以后也不会用到，就不在这里赘述了，请小伙伴们自便。**</font>
+&lt;font color=crimson size=5&gt;**以下三个东东，我自我感觉目前用不到，估计以后也不会用到，就不在这里赘述了，请小伙伴们自便。**&lt;/font&gt;
 
 ### [Liquid 选项](https://jekyllrb.com/docs/configuration/liquid/)
 
@@ -346,4 +327,5 @@ kramdown:
 
 ### [Incremental Regeneration](https://jekyllrb.com/docs/configuration/incremental-regeneration/)
 
-~~~
+</code></pre>
+:ET
