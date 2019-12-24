@@ -5,7 +5,6 @@ subtitle:   YAML
 date:       2019-12-23
 categories: 学习笔记
 author:     Leo Zhao
-header-img: 
 catalog: true                       # 是否归档
 tags:                               #标签
 

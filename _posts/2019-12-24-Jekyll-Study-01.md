@@ -5,7 +5,6 @@ subtitle:   使用Github+Jekyll建站后，自然会产生将其风格化的欲�
 date:       2019-12-24
 categories: 技术生活
 author:     Leo Zhao
-header-img: 
 catalog: true                       # 是否归档
 tags:                               #标签
     - 技术控

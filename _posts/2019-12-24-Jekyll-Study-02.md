@@ -5,7 +5,6 @@ subtitle:   本章主要讲Jekyll配置以及本地服务运行参数
 date:       2019-12-24
 categories: 技术生活
 author:     Leo Zhao
-header-img: 
 catalog: true                       # 是否归档
 tags:                               #标签
     - 技术控

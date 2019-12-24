@@ -5,7 +5,6 @@ subtitle:   技术控
 date:       2019-12-23
 categories: 技术生活
 author:     Leo Zhao
-header-img: 
 catalog: true                       # 是否归档
 tags:                               #标签
     - 技术控

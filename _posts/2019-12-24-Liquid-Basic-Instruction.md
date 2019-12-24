@@ -5,10 +5,8 @@ subtitle:   Liquid语言简介
 date:       2019-12-24
 categories: 学习笔记
 author:     Leo Zhao
-header-img: 
 catalog: true                       # 是否归档
 tags:                               #标签
-
     - Liquid
 excerpt: Liquid末班语言的基本简介，从官网扒过来做查询资料的。 
 mathjax: true
