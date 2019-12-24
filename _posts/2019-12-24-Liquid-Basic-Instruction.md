@@ -14,7 +14,7 @@ mathjax: true
 
 # Liquid Basic Instruction
 
-[TOC]
+[:toc]
 {% raw %}
 # 简介
 
