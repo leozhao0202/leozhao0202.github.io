@@ -2,7 +2,7 @@
 layout:     post                   
 title:      Jekyll 研究笔记（一）
 subtitle:   使用Github+Jekyll建站后，自然会产生将其风格化的欲望
-date:       2019-12-23
+date:       2019-12-24 16:07:00
 categories: 技术生活
 author:     Leo Zhao
 header-img: 
