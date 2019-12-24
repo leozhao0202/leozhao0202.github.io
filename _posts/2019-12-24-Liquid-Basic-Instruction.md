@@ -11,11 +11,11 @@ tags:                               #标签
 excerpt: Liquid末班语言的基本简介，从官网扒过来做查询资料的。 
 mathjax: true
 ---
-{% raw %}
+
 # Liquid Basic Instruction
 
 [TOC]
-
+{% raw %}
 # 简介
 
 Liquid 代码可分为 [**对象（object）**](https://liquid.bootcss.com/basics/introduction/#objects)、[**标记（tag）**](https://liquid.bootcss.com/basics/introduction/#tags) 和 [**过滤器（filter）**](https://liquid.bootcss.com/basics/introduction/#filters)。
