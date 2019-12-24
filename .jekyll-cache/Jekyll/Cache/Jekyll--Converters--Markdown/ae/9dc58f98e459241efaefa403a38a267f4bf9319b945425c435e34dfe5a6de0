@@ -1,0 +1,466 @@
+I"�A<h1 id="liquid-basic-instruction">Liquid Basic Instruction</h1>
+
+<p>[TOC]</p>
+
+<h1 id="简介">简介</h1>
+
+<p>Liquid 代码可分为 <a href="https://liquid.bootcss.com/basics/introduction/#objects"><strong>对象（object）</strong></a>、<a href="https://liquid.bootcss.com/basics/introduction/#tags"><strong>标记（tag）</strong></a> 和 <a href="https://liquid.bootcss.com/basics/introduction/#filters"><strong>过滤器（filter）</strong></a>。</p>
+
+<h2 id="对象">对象</h2>
+
+<p><strong>对象</strong> 告诉 Liquid 在页面的哪个位置展示内容。对象和变量名由双花括号标识：<code>\{\{</code> 和 <code>\}\}</code>。</p>
+
+<p>输入</p>
+
+<pre><code>\{\{ page.title \}\}
+</code></pre>
+
+<p>输出</p>
+
+<pre><code>Introduction
+</code></pre>
+
+<p>上述实例中，Liquid 输出 <code>page.title</code> 对象的内容，此对象保存的是文本 <code>Introduction</code>。</p>
+
+<h2 id="标记tag">标记（tag）</h2>
+
+<p><strong>标记（tag）</strong> 创造了模板的逻辑和控制流。他们由单括号加百分号标识：<code>\{\%</code> 和 <code>\%\}</code>。</p>
+
+<p>标记（tag）并不产生任何可见的文本输出。这意味着你可以用他们为变量赋值、创建条件和循环逻辑，并且不在页面上显示出任何 Liquid 逻辑代码。</p>
+
+<p>输入</p>
+
+<pre><code>\{\% if user \%\}
+  Hello \{\{ user.name \}\}!
+\{\% endif \%\}
+</code></pre>
+
+<p>输出</p>
+
+<pre><code>Hello Adam!
+</code></pre>
+
+<p>标记被分为三类：</p>
+
+<ul>
+  <li><a href="https://liquid.bootcss.com/tags/control-flow">控制流</a></li>
+  <li><a href="https://liquid.bootcss.com/tags/iteration">迭代</a></li>
+  <li><a href="https://liquid.bootcss.com/tags/variable">变量赋值</a></li>
+</ul>
+
+<p>你可以在每一类标记所对应的章节了解更多信息。</p>
+
+<h2 id="过滤器">过滤器</h2>
+
+<p><strong>过滤器</strong> 改变 Liquid 对象的输出。他们被用在输出上，通过一个 <code>|</code> 符号分隔。</p>
+
+<p>输入</p>
+
+<pre><code>\{\{ "/my/fancy/url" | append: ".html" \}\}
+</code></pre>
+
+<p>输出</p>
+
+<pre><code>/my/fancy/url.html
+</code></pre>
+
+<p>多个过滤器可以共同作用于同一个输出，并按照从左到右的顺序执行。</p>
+
+<p>输入</p>
+
+<pre><code>\{\{ "adam!" | capitalize | prepend: "Hello " \}\}
+</code></pre>
+
+<p>输出</p>
+
+<pre><code>Hello Adam!
+</code></pre>
+
+<h1 id="操作符">操作符</h1>
+
+<p>Liquid 包含了大量逻辑（logical）和比较操作符（comparison operator）。</p>
+
+<h2 id="基本操作符">基本操作符</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th><code>==</code></th>
+      <th>相等</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>!=</code></td>
+      <td>不相等</td>
+    </tr>
+    <tr>
+      <td><code>&gt;</code></td>
+      <td>大于</td>
+    </tr>
+    <tr>
+      <td><code>&lt;</code></td>
+      <td>小于</td>
+    </tr>
+    <tr>
+      <td><code>&gt;=</code></td>
+      <td>大于或等于</td>
+    </tr>
+    <tr>
+      <td><code>&lt;=</code></td>
+      <td>小于或等于</td>
+    </tr>
+    <tr>
+      <td><code>or</code></td>
+      <td>逻辑或</td>
+    </tr>
+    <tr>
+      <td><code>and</code></td>
+      <td>逻辑与</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>例如：</p>
+
+<pre><code>\{\% if product.title == "Awesome Shoes" \%\}
+  These shoes are awesome!
+\{\% endif \%\}
+</code></pre>
+
+<p>可以在一个标记（tag）中使用多个操作符：</p>
+
+<pre><code>\{\% if product.type == "Shirt" or product.type == "Shoes" \%\}
+  This is a shirt or a pair of shoes.
+\{\% endif \%\}
+</code></pre>
+
+<h2 id="contains包含">contains（包含）</h2>
+
+<p><code>contains</code> 用于检查在一个字符串中是否存在某个子串。</p>
+
+<pre><code>\{\% if product.title contains 'Pack' \%\}
+  This product's title contains the word Pack.
+\{\% endif \%\}
+</code></pre>
+
+<p><code>contains</code> 还可以用于检查一个字符串数组中是否存在某个字符串。</p>
+
+<pre><code>\{\% if product.tags contains 'Hello' \%\}
+  This product has been tagged with 'Hello'.
+\{\% endif \%\}
+</code></pre>
+
+<p><code>contains</code> 只能用于搜索字符串。你不能将其用于从一个对象数组中检查是否存在某个对象。</p>
+
+<h1 id="真值与假值">真值与假值</h1>
+
+<p>编程时，在条件判断中任何返回 <code>true</code> 的都被叫做 <strong>真值（truthy）</strong>。任何返回 <code>false</code> 的都被叫做 <strong>假值（falsy）</strong>。所有的对象（object）类型都可以被描述为真值（truthy）或假值（falsy）。</p>
+
+<ul>
+  <li><a href="https://liquid.bootcss.com/basics/truthy-and-falsy/#truthy">Truthy</a></li>
+  <li><a href="https://liquid.bootcss.com/basics/truthy-and-falsy/#falsy">Falsy</a></li>
+  <li><a href="https://liquid.bootcss.com/basics/truthy-and-falsy/#summary">Summary</a></li>
+</ul>
+
+<h2 id="真值truthy">真值（Truthy）</h2>
+
+<p>除了 <code>nil</code> 和 <code>false</code> 之外的所有值都是真值。</p>
+
+<p>如下例，字符串 “Tobi” 虽不是布尔类型，但是其在条件判断时被当做真值（truthy）：</p>
+
+<pre><code>\{\% assign tobi = "Tobi" \%\}
+
+\{\% if tobi \%\}
+  This condition will always be true.
+\{\% endif \%\}
+</code></pre>
+
+<p><a href="https://liquid.bootcss.com/basics/types/#string">字符串（String）</a>，即便是空字符串，也是真值（truthy）。如下例，如果 <code>settings.fp_heading</code> 是个空字符串将会输出空 HTML 标签：</p>
+
+<p>输入</p>
+
+<pre><code>\{\% if settings.fp_heading \%\}
+  &lt;h1&gt;\{\{ settings.fp_heading \}\}&lt;/h1&gt;
+\{\% endif \%\}
+</code></pre>
+
+<p>输出</p>
+
+<pre><code>&lt;h1&gt;&lt;/h1&gt;
+</code></pre>
+
+<h2 id="假值falsy">假值（Falsy）</h2>
+
+<p>在 Liquid 中，<a href="https://liquid.bootcss.com/basics/types/#nil"><code>nil</code></a> 和 <a href="https://liquid.bootcss.com/basics/types/#boolean"><code>false</code></a> 是假值。</p>
+
+<h2 id="总结">总结</h2>
+
+<p>下表总结了在 Liquid 中什么是真值什么是假值。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">真值（truthy）</th>
+      <th style="text-align: center">假值（falsy）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">true</td>
+      <td style="text-align: center">•</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">false</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">•</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">nil</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">•</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">string</td>
+      <td style="text-align: center">•</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">empty string</td>
+      <td style="text-align: center">•</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">•</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">integer</td>
+      <td style="text-align: center">•</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">float</td>
+      <td style="text-align: center">•</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">array</td>
+      <td style="text-align: center">•</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">empty array</td>
+      <td style="text-align: center">•</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">page</td>
+      <td style="text-align: center">•</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">EmptyDrop</td>
+      <td style="text-align: center">•</td>
+      <td style="text-align: center"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="数据类型">数据类型</h1>
+
+<p>Liquid 对象的类型可以是以下五种：</p>
+
+<ul>
+  <li><a href="https://liquid.bootcss.com/basics/types/#string">String</a></li>
+  <li><a href="https://liquid.bootcss.com/basics/types/#number">Number</a></li>
+  <li><a href="https://liquid.bootcss.com/basics/types/#boolean">Boolean</a></li>
+  <li><a href="https://liquid.bootcss.com/basics/types/#nil">Nil</a></li>
+  <li><a href="https://liquid.bootcss.com/basics/types/#array">Array</a></li>
+</ul>
+
+<p>你可以通过 <a href="https://liquid.bootcss.com/tags/variable/#assign">assign</a> 或 <a href="https://liquid.bootcss.com/tags/variable/#capture">capture</a> 标记来初始化 Liquid 变量。</p>
+
+<h2 id="string字符串">String（字符串）</h2>
+
+<p>将变量的值包裹在单引号或双引号之中就声明了一个字符串：</p>
+
+<pre><code>\{\% assign my_string = "Hello World!" \%\}
+</code></pre>
+
+<h2 id="number数字">Number（数字）</h2>
+
+<p>数字类型包括浮点数和整数：</p>
+
+<pre><code>\{\% assign my_int = 25 \%\}
+\{\% assign my_float = 39.756 \%\}
+</code></pre>
+
+<h2 id="boolean布尔">Boolean（布尔）</h2>
+
+<p>Booleans 类型只能是 <code>true</code> 或 <code>false</code>。布尔值千万不能加引号，否则就成为字符串了。</p>
+
+<pre><code>\{\% assign foo = true \%\}
+\{\% assign bar = false \%\}
+</code></pre>
+
+<h2 id="nil空">Nil（空）</h2>
+
+<p>Nil 是一个特殊的空值，当 Liquid 代码没有可输出的结果时将返回 Nil。他并<strong>不是</strong>由 “nil” 这个三个字符组成的字符串。</p>
+
+<p>在 <code>if</code> 条件判断和其他 Liquid 标记（tag）判断语句中，Nil <a href="https://liquid.bootcss.com/basics/truthy-and-falsy">被当做 false</a> 。</p>
+
+<p>下例中，如果 user 不存在（也就是 <code>user</code> 返回 <code>nil</code>），Liquid 不输出问候语：</p>
+
+<pre><code>\{\% if user \%\}
+  Hello \{\{ user.name \}\}!
+\{\% endif \%\}
+</code></pre>
+
+<p>如果 Liquid 标记（tag）或输出返回的是 <code>nil</code>，页面上将不会有任何内容。</p>
+
+<p>输入</p>
+
+<pre><code>The current user is \{\{ user.name \}\}
+</code></pre>
+
+<p>输出</p>
+
+<pre><code>The current user is
+</code></pre>
+
+<h2 id="array数组">Array（数组）</h2>
+
+<p>数组能够存储一组任意类型的变量。</p>
+
+<h3 id="访问数组中的项">访问数组中的项</h3>
+
+<p>通过 <a href="https://liquid.bootcss.com/tags/iteration">迭代标记（iteration tag）</a> 可以访问数组中的所有项。</p>
+
+<p>输入</p>
+
+<pre><code>&lt;!-- if site.users = "Tobi", "Laura", "Tetsuro", "Adam" --&gt;
+\{\% for user in site.users \%\}
+  \{\{ user \}\}
+\{\% endfor \%\}
+</code></pre>
+
+<p>输出</p>
+
+<pre><code>Tobi Laura Tetsuro Adam
+</code></pre>
+
+<h3 id="访问数组中的特定项">访问数组中的特定项</h3>
+
+<p>利用方括号 <code>[</code> <code>]</code> 能够访问数组中的特定项。数组的索引从 0 开始。</p>
+
+<p>输入</p>
+
+<pre><code>&lt;!-- if site.users = "Tobi", "Laura", "Tetsuro", "Adam" --&gt;
+\{\{ site.users[0] \}\}
+\{\{ site.users[1] \}\}
+\{\{ site.users[3] \}\}
+</code></pre>
+
+<p>输出</p>
+
+<pre><code>Tobi
+Laura
+Adam
+</code></pre>
+
+<h3 id="初始化数组">初始化数组</h3>
+
+<p>你无法只通过 Liquid 语法初始化一个数组。</p>
+
+<p>然而，你可以利用 <a href="https://liquid.bootcss.com/filters/split">split</a> 过滤器将一个字符串分割为一个子字符串数组。</p>
+
+<h1 id="liquid-的各种分支">Liquid 的各种分支</h1>
+
+<p>Liquid 是一门灵活、安全的模版语言，被用于许多不同环境中。Liquid 被创建之初是用在 <a href="https://www.shopify.com/">Shopify</a> 商店系统中的，后来也被广泛用于 <a href="https://jekyllrb.com/">Jekyll</a> 网站中。随着时间的推移，Shopify 和 Jekyll 分别为 Liquid 添加了针对各自用途的对象（object）、标记（tag）和过滤器（filter）。目前最流行的 Liquid 版本包括 <strong>Liquid</strong>、<strong>Shopify Liquid</strong> 和 <strong>Jekyll Liquid</strong>。</p>
+
+<p>本站点托管的是最新版本的 <strong>Liquid</strong> 的文档，包括了 beta 和 release candidate 版本中包含的特性，也就是说，是独立于 Shopify 和 Jekyll 之外的 Liquid。如果你是从 Liquid 仓库下载的代码或者安装的的是 <a href="https://rubygems.org/gems/liquid">gem</a> 包，你所选择的 Liquid 版本对应你能够访问的对象（object）、标记（tag）和过滤器。</p>
+
+<h2 id="shopify">Shopify</h2>
+
+<p>Shopify 一直采用的都是最新版本的 Liquid，并且 Shopify 会针对 merchants’ store 为 Liquid 添加大量的对象（object）、标记（tag）和过滤器。这些新增的内容包括代表商店（store）、产品（product）和顾客信息的对象，以及用于展示商店数据和操作产品照片的过滤器。</p>
+
+<p>Shopify 版本的 Liquid 所对应的文档在 <a href="https://help.shopify.com/themes/liquid">Shopify Help Center</a>。如果你希望尝试 Shopify 版本的 Liquid，你可以<a href="https://www.shopify.com/signup">试用 Shopify</a> 或者使用类似 <a href="http://droppen.org/">DropPen</a> 的工具。</p>
+
+<h2 id="jekyll">Jekyll</h2>
+
+<p><a href="https://jekyllrb.com/">Jekyll</a> 是一个静态网站生成器，一个用于将模版和内容合并到一起从而创建网站的命令行工具。ekyll 将 Liquid 作为自身的模版语言，并且添加了许多对象（object）、标记（tag）和过滤器（filter）。这些新增内容包括代表内容页面的对象、用于在页面中引入内容片段的标记（tag），以及用于操作字符串和 URL 的过滤器。</p>
+
+<p>Jekyll 还是 <a href="https://pages.github.com/">GitHub Pages</a> 的底层引擎。GitHub Pages 是一项网站托管服务，允许你将 Jekyll 网站推送到 GitHub 仓库，最终得到一个发布到公网的站点。本网站就是由 GitHub Pages 托管的。</p>
+
+<p>Jekyll 可能使用的不是最新版本的 Liquid。也就意味着本文档所列出的标记（tag）和过滤器不能在 Jekyll 中使用。通常 Jekyll 项目使用的是稳定版的 Liquid，而不使用 beta 或 release candidate 版本。通过 <a href="https://rubygems.org/gems/jekyll">Jekyll 的 gem 信息也</a> 可查看 Jekyll 所依赖的所有 gem 包，从而可以了解 Jekyll 所使用的 Liquid 版本。</p>
+
+<p>Jekyll 版本的 Liquid 的文档在 <a href="http://jekyllrb.com/docs/templates/">Templates section of Jekyll’s documentation</a>。如果你希望尝试 Jekyll 版本的 Liquid，你可以克隆 Jekyll 项目或者安装 Jekyll 的 gem 包，然后在静态网站中测试 Liquid。</p>
+
+<h1 id="控制输出的空白符">控制输出的空白符</h1>
+
+<p>在 Liquid 模版中，你可以将连字符放在标记（tag）中，例如 <code>\{\{-</code>、<code>-\}\}</code>、<code>\{\%-</code> 和 <code>-\%\}</code>，用于将标记（tag）渲染之后的输出内容的左侧或右侧的空拍符剔除。</p>
+
+<p>通常，即使不输出文本，模版中的任何 Liquid 表达式仍然会在渲染之后输出的 HTML 中包含一个空行：</p>
+
+<p>输入</p>
+
+<pre><code>\{\% assign my_variable = "tomato" \%\}
+\{\{ my_variable \}\}
+</code></pre>
+
+<p>请注意渲染之后输出的 “tomato” 字符前面包含了一个空行：</p>
+
+<p>输出</p>
+
+<pre><code>tomato
+</code></pre>
+
+<p>通过为 <code>assign</code> 标记（tag）添加连字符，可以将渲染之后所输出的空拍符删除：</p>
+
+<p>输入</p>
+
+<pre><code>\{\%- assign my_variable = "tomato" -\%\}
+\{\{ my_variable \}\}
+</code></pre>
+
+<p>输出</p>
+
+<pre><code>tomato
+</code></pre>
+
+<p>如果你不希望任何标记（tag）被渲染之后所输出的内容有任何空白符，只需在所有标记（tag）两侧全部添加连字符即可，例如 (<code>\{\%-</code> 和 <code>-\%\}</code>)：</p>
+
+<p>输入</p>
+
+<pre><code>\{\% assign username = "John G. Chalmers-Smith" \%\}
+\{\% if username and username.size &gt; 10 \%\}
+  Wow, \{\{ username \}\}, you have a long name!
+\{\% else \%\}
+  Hello there!
+\{\% endif \%\}
+</code></pre>
+
+<p>不做空白符控制的输出</p>
+
+<pre><code>  Wow, John G. Chalmers-Smith, you have a long name!
+</code></pre>
+
+<p>输入</p>
+
+<pre><code>\{\%- assign username = "John G. Chalmers-Smith" -\%\}
+\{\%- if username and username.size &gt; 10 -\%\}
+  Wow, \{\{ username \}\}, you have a long name!
+\{\%- else -\%\}
+  Hello there!
+\{\%- endif -\%\}
+</code></pre>
+
+<p>带有空白符控制的输出</p>
+
+<pre><code>Wow, John G. Chalmers-Smith, you have a long name!
+</code></pre>
+:ET

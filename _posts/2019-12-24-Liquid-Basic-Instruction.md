@@ -40,16 +40,16 @@ Introduction
 
 ## 标记（tag）
 
-**标记（tag）** 创造了模板的逻辑和控制流。他们由单括号加百分号标识：`\{%` 和 `%\}`。
+**标记（tag）** 创造了模板的逻辑和控制流。他们由单括号加百分号标识：`\{\%` 和 `\%\}`。
 
 标记（tag）并不产生任何可见的文本输出。这意味着你可以用他们为变量赋值、创建条件和循环逻辑，并且不在页面上显示出任何 Liquid 逻辑代码。
 
 输入
 
 ```
-\{% if user %\}
+\{\% if user \%\}
   Hello \{\{ user.name \}\}!
-\{% endif %\}
+\{\% endif \%\}
 ```
 
 输出
@@ -117,17 +117,17 @@ Liquid 包含了大量逻辑（logical）和比较操作符（comparison operato
 例如：
 
 ```
-\{% if product.title == "Awesome Shoes" %\}
+\{\% if product.title == "Awesome Shoes" \%\}
   These shoes are awesome!
-\{% endif %\}
+\{\% endif \%\}
 ```
 
 可以在一个标记（tag）中使用多个操作符：
 
 ```
-\{% if product.type == "Shirt" or product.type == "Shoes" %\}
+\{\% if product.type == "Shirt" or product.type == "Shoes" \%\}
   This is a shirt or a pair of shoes.
-\{% endif %\}
+\{\% endif \%\}
 ```
 
 ## contains（包含）
@@ -135,17 +135,17 @@ Liquid 包含了大量逻辑（logical）和比较操作符（comparison operato
 `contains` 用于检查在一个字符串中是否存在某个子串。
 
 ```
-\{% if product.title contains 'Pack' %\}
+\{\% if product.title contains 'Pack' \%\}
   This product's title contains the word Pack.
-\{% endif %\}
+\{\% endif \%\}
 ```
 
 `contains` 还可以用于检查一个字符串数组中是否存在某个字符串。
 
 ```
-\{% if product.tags contains 'Hello' %\}
+\{\% if product.tags contains 'Hello' \%\}
   This product has been tagged with 'Hello'.
-\{% endif %\}
+\{\% endif \%\}
 ```
 
 `contains` 只能用于搜索字符串。你不能将其用于从一个对象数组中检查是否存在某个对象。
@@ -167,11 +167,11 @@ Liquid 包含了大量逻辑（logical）和比较操作符（comparison operato
 如下例，字符串 “Tobi” 虽不是布尔类型，但是其在条件判断时被当做真值（truthy）：
 
 ```
-\{% assign tobi = "Tobi" %\}
+\{\% assign tobi = "Tobi" \%\}
 
-\{% if tobi %\}
+\{\% if tobi \%\}
   This condition will always be true.
-\{% endif %\}
+\{\% endif \%\}
 ```
 
 [字符串（String）](https://liquid.bootcss.com/basics/types/#string)，即便是空字符串，也是真值（truthy）。如下例，如果 `settings.fp_heading` 是个空字符串将会输出空 HTML 标签：
@@ -179,9 +179,9 @@ Liquid 包含了大量逻辑（logical）和比较操作符（comparison operato
 输入
 
 ```
-\{% if settings.fp_heading %\}
+\{\% if settings.fp_heading \%\}
   <h1>\{\{ settings.fp_heading \}\}</h1>
-\{% endif %\}
+\{\% endif \%\}
 ```
 
 输出
@@ -232,7 +232,7 @@ Liquid 对象的类型可以是以下五种：
 将变量的值包裹在单引号或双引号之中就声明了一个字符串：
 
 ```
-\{% assign my_string = "Hello World!" %\}
+\{\% assign my_string = "Hello World!" \%\}
 ```
 
 ## Number（数字）
@@ -240,8 +240,8 @@ Liquid 对象的类型可以是以下五种：
 数字类型包括浮点数和整数：
 
 ```
-\{% assign my_int = 25 %\}
-\{% assign my_float = 39.756 %\}
+\{\% assign my_int = 25 \%\}
+\{\% assign my_float = 39.756 \%\}
 ```
 
 ## Boolean（布尔）
@@ -249,8 +249,8 @@ Liquid 对象的类型可以是以下五种：
 Booleans 类型只能是 `true` 或 `false`。布尔值千万不能加引号，否则就成为字符串了。
 
 ```
-\{% assign foo = true %\}
-\{% assign bar = false %\}
+\{\% assign foo = true \%\}
+\{\% assign bar = false \%\}
 ```
 
 ## Nil（空）
@@ -262,9 +262,9 @@ Nil 是一个特殊的空值，当 Liquid 代码没有可输出的结果时将�
 下例中，如果 user 不存在（也就是 `user` 返回 `nil`），Liquid 不输出问候语：
 
 ```
-\{% if user %\}
+\{\% if user \%\}
   Hello \{\{ user.name \}\}!
-\{% endif %\}
+\{\% endif \%\}
 ```
 
 如果 Liquid 标记（tag）或输出返回的是 `nil`，页面上将不会有任何内容。
@@ -293,9 +293,9 @@ The current user is
 
 ```
 <!-- if site.users = "Tobi", "Laura", "Tetsuro", "Adam" -->
-\{% for user in site.users %\}
+\{\% for user in site.users \%\}
   \{\{ user \}\}
-\{% endfor %\}
+\{\% endfor \%\}
 ```
 
 输出
@@ -359,14 +359,14 @@ Jekyll 版本的 Liquid 的文档在 [Templates section of Jekyll’s documentat
 
 # 控制输出的空白符
 
-在 Liquid 模版中，你可以将连字符放在标记（tag）中，例如 `\{\{-`、`-\}\}`、`\{%-` 和 `-%\}`，用于将标记（tag）渲染之后的输出内容的左侧或右侧的空拍符剔除。
+在 Liquid 模版中，你可以将连字符放在标记（tag）中，例如 `\{\{-`、`-\}\}`、`\{\%-` 和 `-\%\}`，用于将标记（tag）渲染之后的输出内容的左侧或右侧的空拍符剔除。
 
 通常，即使不输出文本，模版中的任何 Liquid 表达式仍然会在渲染之后输出的 HTML 中包含一个空行：
 
 输入
 
 ```
-\{% assign my_variable = "tomato" %\}
+\{\% assign my_variable = "tomato" \%\}
 \{\{ my_variable \}\}
 ```
 
@@ -383,7 +383,7 @@ tomato
 输入
 
 ```
-\{%- assign my_variable = "tomato" -%\}
+\{\%- assign my_variable = "tomato" -\%\}
 \{\{ my_variable \}\}
 ```
 
@@ -393,17 +393,17 @@ tomato
 tomato
 ```
 
-如果你不希望任何标记（tag）被渲染之后所输出的内容有任何空白符，只需在所有标记（tag）两侧全部添加连字符即可，例如 (`\{%-` 和 `-%\}`)：
+如果你不希望任何标记（tag）被渲染之后所输出的内容有任何空白符，只需在所有标记（tag）两侧全部添加连字符即可，例如 (`\{\%-` 和 `-\%\}`)：
 
 输入
 
 ```
-\{% assign username = "John G. Chalmers-Smith" %\}
-\{% if username and username.size > 10 %\}
+\{\% assign username = "John G. Chalmers-Smith" \%\}
+\{\% if username and username.size > 10 \%\}
   Wow, \{\{ username \}\}, you have a long name!
-\{% else %\}
+\{\% else \%\}
   Hello there!
-\{% endif %\}
+\{\% endif \%\}
 ```
 
 不做空白符控制的输出
@@ -415,12 +415,12 @@ tomato
 输入
 
 ```
-\{%- assign username = "John G. Chalmers-Smith" -%\}
-\{%- if username and username.size > 10 -%\}
+\{\%- assign username = "John G. Chalmers-Smith" -\%\}
+\{\%- if username and username.size > 10 -\%\}
   Wow, \{\{ username \}\}, you have a long name!
-\{%- else -%\}
+\{\%- else -\%\}
   Hello there!
-\{%- endif -%\}
+\{\%- endif -\%\}
 ```
 
 带有空白符控制的输出
