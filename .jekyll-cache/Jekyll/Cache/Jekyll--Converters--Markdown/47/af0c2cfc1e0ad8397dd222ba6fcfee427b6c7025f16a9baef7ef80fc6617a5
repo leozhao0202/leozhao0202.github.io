@@ -1,0 +1,499 @@
+I"�-<p>YAML 是专门用来写配置文件的语言，非常简洁和强大，远比 JSON 格式方便。 本文转自<a href="http://www.ruanyifeng.com/blog/">阮一峰的网络日志</a> - <a href="http://www.ruanyifeng.com/blog/2016/07/yaml.html">YAML 语言教程</a>。</p>
+
+<h2 id="一简介">一、简介</h2>
+
+<p>YAML 语言（发音 /ˈjæməl/ ）的设计目标，就是方便人类读写。它实质上是一种通用的数据串行化格式。</p>
+
+<p>它的基本语法规则如下。</p>
+
+<ul>
+  <li>
+    <p>大小写敏感</p>
+  </li>
+  <li>
+    <p>使用缩进表示层级关系</p>
+  </li>
+  <li>
+    <p>缩进时不允许使用Tab键，只允许使用空格。</p>
+  </li>
+  <li>
+    <p>缩进的空格数目不重要，只要相同层级的元素左侧对齐即可</p>
+  </li>
+</ul>
+
+<p>~~~</p>
+
+<p><strong><code>#</code> 表示注释，从这个字符一直到行尾，都会被解析器忽略。</strong></p>
+
+<p>YAML 支持的数据结构有以下三种：</p>
+
+<ul>
+  <li>对象：键值对的集合，又称为映射（mapping）/ 哈希（hashes） / 字典（dictionary）</li>
+  <li>数组：一组按次序排列的值，又称为序列（sequence） / 列表（list）</li>
+  <li>纯量（scalars）：单个的、不可再分的值</li>
+</ul>
+
+<p>以下分别介绍这三种数据结构。</p>
+
+<h2 id="二对象">二、对象</h2>
+
+<p><strong>对象的一组键值对，使用冒号结构表示。</strong></p>
+
+<blockquote>
+  <pre><code class="language-javascript">animal: pets
+</code></pre>
+</blockquote>
+
+<p>转为 JavaScript 如下。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">{ animal: 'pets' }
+</code></pre>
+</blockquote>
+
+<p>Yaml 也允许另一种写法，将所有键值对写成一个行内对象。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">hash: { name: Steve, foo: bar } 
+</code></pre>
+</blockquote>
+
+<p>转为 JavaScript 如下。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">{ hash: { name: 'Steve', foo: 'bar' } }
+</code></pre>
+</blockquote>
+
+<h2 id="三数组">三、数组</h2>
+
+<p>一组<strong>连词线开头</strong>的行，构成一个数组。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">- Cat
+- Dog
+- Goldfish
+</code></pre>
+</blockquote>
+
+<p>转为 JavaScript 如下。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">[ 'Cat', 'Dog', 'Goldfish' ]
+</code></pre>
+</blockquote>
+
+<p>数据结构的子成员是一个数组，则可以<strong>在该项下面缩进一个空格。</strong></p>
+
+<blockquote>
+  <pre><code class="language-javascript">-
+ - Cat
+ - Dog
+ - Goldfish
+</code></pre>
+</blockquote>
+
+<p>转为 JavaScript 如下。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">[ [ 'Cat', 'Dog', 'Goldfish' ] ]
+</code></pre>
+</blockquote>
+
+<p>数组也可以采用行内表示法。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">animal: [Cat, Dog]
+</code></pre>
+</blockquote>
+
+<p>转为 JavaScript 如下。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">{ animal: [ 'Cat', 'Dog' ] }
+</code></pre>
+</blockquote>
+
+<h2 id="四复合结构">四、复合结构</h2>
+
+<p>对象和数组可以结合使用，形成复合结构。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">languages:
+ - Ruby
+ - Perl
+ - Python 
+websites:
+ YAML: yaml.org 
+ Ruby: ruby-lang.org 
+ Python: python.org 
+ Perl: use.perl.org 
+</code></pre>
+</blockquote>
+
+<p>转为 JavaScript 如下。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">{ languages: [ 'Ruby', 'Perl', 'Python' ],
+  websites: 
+   { YAML: 'yaml.org',
+     Ruby: 'ruby-lang.org',
+     Python: 'python.org',
+     Perl: 'use.perl.org' } }
+</code></pre>
+</blockquote>
+
+<h2 id="五纯量">五、纯量</h2>
+
+<p>纯量是最基本的、不可再分的值。以下数据类型都属于 JavaScript 的纯量。</p>
+
+<blockquote>
+  <ul>
+    <li>字符串</li>
+    <li>布尔值</li>
+    <li>整数</li>
+    <li>浮点数</li>
+    <li>Null</li>
+    <li>时间</li>
+    <li>日期</li>
+  </ul>
+</blockquote>
+
+<p>数值直接以字面量的形式表示。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">number: 12.30
+</code></pre>
+</blockquote>
+
+<p>转为 JavaScript 如下。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">{ number: 12.30 }
+</code></pre>
+</blockquote>
+
+<p>布尔值用<code>true</code>和<code>false</code>表示。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">isSet: true
+</code></pre>
+</blockquote>
+
+<p>转为 JavaScript 如下。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">{ isSet: true }
+</code></pre>
+</blockquote>
+
+<p><code>null</code>用<code>~</code>表示。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">parent: ~ 
+</code></pre>
+</blockquote>
+
+<p>转为 JavaScript 如下。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">{ parent: null }
+</code></pre>
+</blockquote>
+
+<p>时间采用 ISO8601 格式。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">iso8601: 2001-12-14t21:59:43.10-05:00 
+</code></pre>
+</blockquote>
+
+<p>转为 JavaScript 如下。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">{ iso8601: new Date('2001-12-14t21:59:43.10-05:00') }
+</code></pre>
+</blockquote>
+
+<p>日期采用复合 iso8601 格式的年、月、日表示。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">date: 1976-07-31
+</code></pre>
+</blockquote>
+
+<p>转为 JavaScript 如下。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">{ date: new Date('1976-07-31') }
+</code></pre>
+</blockquote>
+
+<p>YAML 允许<strong>使用两个感叹号，强制转换数据类型</strong>。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">e: !!str 123
+f: !!str true
+</code></pre>
+</blockquote>
+
+<p>转为 JavaScript 如下。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">{ e: '123', f: 'true' }
+</code></pre>
+</blockquote>
+
+<h2 id="六字符串">六、字符串</h2>
+
+<p>字符串是最常见，也是最复杂的一种数据类型。</p>
+
+<p>字符串<strong>默认不使用引号</strong>表示。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">str: 这是一行字符串
+</code></pre>
+</blockquote>
+
+<p>转为 JavaScript 如下。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">{ str: '这是一行字符串' }
+</code></pre>
+</blockquote>
+
+<p><strong>如果字符串之中包含空格或特殊字符</strong>，需要放在引号之中。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">str: '内容： 字符串'
+</code></pre>
+</blockquote>
+
+<p>转为 JavaScript 如下。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">{ str: '内容: 字符串' }
+</code></pre>
+</blockquote>
+
+<p>单引号和双引号都可以使用，双引号不会对特殊字符转义。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">s1: '内容\n字符串'
+s2: "内容\n字符串"
+</code></pre>
+</blockquote>
+
+<p>转为 JavaScript 如下。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">{ s1: '内容\\n字符串', s2: '内容\n字符串' }
+</code></pre>
+</blockquote>
+
+<p>单引号之中如果还有单引号，必须连续使用两个<strong>单引号转义</strong>。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">str: 'labor''s day' 
+</code></pre>
+</blockquote>
+
+<p>转为 JavaScript 如下。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">{ str: 'labor\'s day' }
+</code></pre>
+</blockquote>
+
+<p>字符串可以写成多行，从第二行开始，必须有一个单空格缩进。换行符会被转为空格。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">str: 这是一段
+  多行
+  字符串
+</code></pre>
+</blockquote>
+
+<p>转为 JavaScript 如下。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">{ str: '这是一段 多行 字符串' }
+</code></pre>
+</blockquote>
+
+<p>多行字符串可以<strong>使用<code>|</code>保留换行符，也可以使用<code>&gt;</code>折叠换行</strong>。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">this: |
+  Foo
+  Bar
+that: &gt;
+  Foo
+  Bar
+</code></pre>
+</blockquote>
+
+<p>转为 JavaScript 代码如下。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">{ this: 'Foo\nBar\n', that: 'Foo Bar\n' }
+</code></pre>
+</blockquote>
+
+<p><strong><code>+</code>表示保留文字块末尾的换行，<code>-</code>表示删除字符串末尾的换行。</strong></p>
+
+<blockquote>
+  <pre><code class="language-javascript">s1: |
+  Foo
+
+s2: |+
+  Foo
+
+
+s3: |-
+  Foo
+</code></pre>
+</blockquote>
+
+<p>转为 JavaScript 代码如下。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">{ s1: 'Foo\n', s2: 'Foo\n\n\n', s3: 'Foo' }
+</code></pre>
+</blockquote>
+
+<p>字符串之中可以插入 HTML 标记。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">message: |
+
+  &lt;p style="color: red"&gt;
+    段落
+  &lt;/p&gt;
+</code></pre>
+</blockquote>
+
+<p>转为 JavaScript 如下。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">{ message: '\n&lt;p style="color: red"&gt;\n  段落\n&lt;/p&gt;\n' }
+</code></pre>
+</blockquote>
+
+<h2 id="七引用">七、引用</h2>
+
+<p>锚点<code>&amp;</code>和别名<code>*</code>，可以用来引用。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">defaults: &amp;defaults
+  adapter:  postgres
+  host:     localhost
+
+development:
+  database: myapp_development
+  &lt;&lt;: *defaults
+
+test:
+  database: myapp_test
+  &lt;&lt;: *defaults
+</code></pre>
+</blockquote>
+
+<p>等同于下面的代码。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">defaults:
+  adapter:  postgres
+  host:     localhost
+
+development:
+  database: myapp_development
+  adapter:  postgres
+  host:     localhost
+
+test:
+  database: myapp_test
+  adapter:  postgres
+  host:     localhost
+</code></pre>
+</blockquote>
+
+<p><strong><code>&amp;</code>用来建立锚点（<code>defaults</code>），<code>&lt;&lt;</code>表示合并到当前数据，<code>*</code>用来引用锚点。</strong></p>
+
+<p>下面是另一个例子。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">- &amp;showell Steve 
+- Clark 
+- Brian 
+- Oren 
+- *showell 
+</code></pre>
+</blockquote>
+
+<p>转为 JavaScript 代码如下。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">[ 'Steve', 'Clark', 'Brian', 'Oren', 'Steve' ]
+</code></pre>
+</blockquote>
+
+<h2 id="八函数和正则表达式的转换">八、函数和正则表达式的转换</h2>
+
+<p>这是 <a href="https://github.com/nodeca/js-yaml">JS-YAML</a> 库特有的功能，可以把函数和正则表达式转为字符串。</p>
+
+<blockquote>
+  <pre><code class="language-javascript"># example.yml
+fn: function () { return 1 }
+reg: /test/
+</code></pre>
+</blockquote>
+
+<p>解析上面的 yml 文件的代码如下。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">var yaml = require('js-yaml');
+var fs   = require('fs');
+
+try {
+  var doc = yaml.load(
+    fs.readFileSync('./example.yml', 'utf8')
+  );
+  console.log(doc);
+} catch (e) {
+  console.log(e);
+}
+</code></pre>
+</blockquote>
+
+<p>从 JavaScript 对象还原到 yaml 文件的代码如下。</p>
+
+<blockquote>
+  <pre><code class="language-javascript">var yaml = require('js-yaml');
+var fs   = require('fs');
+
+var obj = {
+  fn: function () { return 1 },
+  reg: /test/
+};
+
+try {
+  fs.writeFileSync(
+    './example.yml',
+    yaml.dump(obj),
+    'utf8'
+  );
+} catch (e) {
+  console.log(e);
+}
+</code></pre>
+</blockquote>
+
+<h2 id="九参考链接">九、参考链接</h2>
+
+<ul>
+  <li><a href="http://www.yaml.org/spec/1.2/spec.html">YAML 1.2 规格</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/YAML">YAML from Wikipedia</a></li>
+  <li><a href="http://yaml.org/YAML_for_ruby.html">YAML for Ruby</a></li>
+</ul>
+:ET

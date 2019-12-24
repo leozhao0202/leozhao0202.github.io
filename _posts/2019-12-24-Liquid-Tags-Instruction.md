@@ -2,7 +2,7 @@
 layout:     post                   
 title:      Liquid模板语言（2）
 subtitle:   Liquid 标记介绍 
-date:       2019-12-24 12:05:00
+date:       2019-12-24
 categories: 学习笔记
 author:     Leo Zhao
 header-img: 
