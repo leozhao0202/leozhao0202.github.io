@@ -10,7 +10,7 @@ catalog: true                       # 是否归档
 tags:                               #标签
     - 技术控
     - Jekyll
-excerpt_separator: ~~~ 
+excerpt_separator: <!--more--> 
 mathjax: true
 ---
 
@@ -21,7 +21,7 @@ mathjax: true
 我挑了一篇 [Github搭建个人博客（2019最新版,亲测）](https://blog.csdn.net/xudailong_blog/article/details/78762262/)，大家也可以参考这篇，比较详细。
 
 当然，万物皆无常事，凡事都有意外。这当中还是遇到很多小问题，一时间也搞得焦头烂额，约莫搞了两天才算准备停当。下面就简略讲讲，给大家一个参考：
-~~~
+<!--more-->
 1. #### 申请Github账号，建立仓库（Repositories）
 
    这个没啥难度，也没遇到问题，一步一步来就是。

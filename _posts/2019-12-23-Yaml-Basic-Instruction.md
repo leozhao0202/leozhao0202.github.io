@@ -10,7 +10,7 @@ catalog: true                       # 是否归档
 tags:                               #标签
 
     - YAML语言
-excerpt_separator: ~~~ 
+excerpt_separator: <!--more--> 
 mathjax: true
 ---
 
@@ -31,7 +31,7 @@ YAML 语言（发音 /ˈjæməl/ ）的设计目标，就是方便人类读写�
 
 - 缩进的空格数目不重要，只要相同层级的元素左侧对齐即可
 
-~~~
+<!--more-->
 
 **`#` 表示注释，从这个字符一直到行尾，都会被解析器忽略。**
 
