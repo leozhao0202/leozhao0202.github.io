@@ -13,7 +13,7 @@ excerpt: 本文讲的东西比较多，但基本上都是基础的基础。我�
 mathjax: true 
 ---
 
-Jekyll允许你很轻松的设计你的网站，这很大程度上归功于灵活强大的配置功能。既可以在网站根目录下的 `_config.yml` 文件中配置，也可以通过<b>命令行的标记<b>来配置（<b><font color=#0099ff>就是说，可以在命令框（CMD）中通过类似`jekyll serve --trace`这样的语句来配置</font><b>）。
+Jekyll允许你很轻松的设计你的网站，这很大程度上归功于灵活强大的配置功能。既可以在网站根目录下的 `_config.yml` 文件中配置，也可以通过<b>命令行的标记<b>来配置（<b><font color=DodgerBlue>就是说，可以在命令框（CMD）中通过类似`jekyll serve --trace`这样的语句来配置</font><b>）。
 
 ### 全局配置（Global Configuration）
 
@@ -22,14 +22,14 @@ Jekyll允许你很轻松的设计你的网站，这很大程度上归功于灵�
 | 设置                                                         | 选项 和 标记                                                 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | <b>Site Source<b><br>修改 Jekyll 读取文件的路径。            | `source: DIR``-s, --source DIR`                              |
-| <b>Site Destination<b><br>修改 Jekyll 写入文件的路径。<b><font color=#0099ff>就是生成站点的地方。</font><b> | `destination: DIR``-d, --destination DIR`                    |
+| <b>Site Destination<b><br>修改 Jekyll 写入文件的路径。<b><font color=DodgerBlue>就是生成站点的地方。</font><b> | `destination: DIR``-d, --destination DIR`                    |
 | <b>Safe<b><br>禁用 [自定义插件](http://jekyllcn.com/docs/plugins/)。 | `safe: BOOL``--safe`                                         |
-| <b>Exclude<b><br>转换时排除某些文件、文件夹。<b><font color=#0099ff>意思就是凡是在exclude中定义的文件夹或文件，都不会转换并在_site文件夹内生成最终页面或部件。</font><b> | `exclude: [DIR, FILE, ...]`                                  |
-| <b>Include<b><br>转换时强制包含某些文件、文件夹。所有. 开头的文件是被默认排除的，比如`.htaccess` 是个典型的例子。<b><font color=#0099ff>`htaccess`是Apache的配置文件，因此即便你定义了一个以.开头的文件并把它在Include中定义，它仍然不会被转换并生成。</font><b> | `include: [DIR, FILE, ...]`                                  |
+| <b>Exclude<b><br>转换时排除某些文件、文件夹。<b><font color=DodgerBlue>意思就是凡是在exclude中定义的文件夹或文件，都不会转换并在_site文件夹内生成最终页面或部件。</font><b> | `exclude: [DIR, FILE, ...]`                                  |
+| <b>Include<b><br>转换时强制包含某些文件、文件夹。所有. 开头的文件是被默认排除的，比如`.htaccess` 是个典型的例子。<b><font color=DodgerBlue>`htaccess`是Apache的配置文件，因此即便你定义了一个以.开头的文件并把它在Include中定义，它仍然不会被转换并生成。</font><b> | `include: [DIR, FILE, ...]`                                  |
 | <b>Keep files<b><br/>当每次生成站点时，`destination`（默认_site文件夹）中的一切会被清理，如果你想保留某些文件，可以在此定义。例如由你的构建工具生成的文件或者资源。 | `keep_files: [DIR, FILE, ...]`                               |
 | <b>Time Zone<b><br/>设置时区，这个设置作用于 `TZ` 变量， Ruby 用它来处理日期和时间。 [IANA Time Zone Database](http://en.wikipedia.org/wiki/Tz_database) 里边的都有效，比如 `America/New_York` 。默认值为操作系统的时区。 | `timezone: TIMEZONE`                                         |
 | <b>Encoding<b><br/>设置文件的编码，仅 Ruby 1.9 以上可用。2.0.0　版本以后默认值为 utf-8，之前版本默认值为 nil，使用 Ruby 默认的 `ASCII-8BIT`。可以用命令 `ruby -e 'puts Encoding::list.join("\n")'` 查看 Ruby 可用的编码。 | `encoding: ENCODING`                                         |
-| <b>Defaults<b><br/>设置 [YAML 头信息](http://jekyllcn.com/docs/frontmatter/) 的默认值。<b><font color=#0099ff>这个以后会大讲特讲的。</font><b> | [详细](http://jekyllcn.com/docs/configuration/#front-matter-defaults) |
+| <b>Defaults<b><br/>设置 [YAML 头信息](http://jekyllcn.com/docs/frontmatter/) 的默认值。<b><font color=DodgerBlue>这个以后会大讲特讲的。</font><b> | [详细](http://jekyllcn.com/docs/configuration/#front-matter-defaults) |
 
 ##### Destination 文件夹会在站点建立时被清理
 
@@ -64,7 +64,7 @@ Jekyll允许你很轻松的设计你的网站，这很大程度上归功于灵�
 
 除了下边的选项， `serve` 命令还可以接收 `build` 的选项，在运行网站服务之前的编译时候使用。
 
-<b><font color=#0099ff>在本地启动jekyll服务时，可以挂在以下命令项或是上面build的命令项，已达到相应的目的。</font><b>
+<b><font color=DodgerBlue>在本地启动jekyll服务时，可以挂在以下命令项或是上面build的命令项，已达到相应的目的。</font><b>
 
 | 设置                                                         | 选项 和 标记                      |
 | ------------------------------------------------------------ | --------------------------------- |
@@ -108,17 +108,17 @@ JEKYLL_ENV=production jekyll build
 
 在 build 命令中指定参数，当你迁移环境时，可以避免更改你配置文件中的值。
 
-<b><font color=#0099ff>这个东西在工作中是很有必要的，有时候一个项目会设置N多个环境，为了避免混淆，不要懒惰哟。</font><b>
+<b><font color=DodgerBlue>这个东西在工作中是很有必要的，有时候一个项目会设置N多个环境，为了避免混淆，不要懒惰哟。</font><b>
 
 
 
 ## 头信息默认值
 
-<b><font color=#0099ff>这里是重点内容，请仔细阅读学习，如果没读懂，那不是我的问题，请自行再读一遍。</font><b>
+<b><font color=DodgerBlue>这里是重点内容，请仔细阅读学习，如果没读懂，那不是我的问题，请自行再读一遍。</font><b>
 
 通过使用 [YAML 头信息](http://jekyllcn.com/docs/frontmatter/)可以定义站点的页面和文章的参数。
 
-设置一些例如布局或者自定义标题，亦或是给文章指定一个更精确的日期/时间，这都可以通过在页面或文章的头信息设置参数来实现。<b><font color=#0099ff>布局，就是layout，也就是文章外面穿的那套礼服。</font><b>
+设置一些例如布局或者自定义标题，亦或是给文章指定一个更精确的日期/时间，这都可以通过在页面或文章的头信息设置参数来实现。<b><font color=DodgerBlue>布局，就是layout，也就是文章外面穿的那套礼服。</font><b>
 
 很多时候，你会发现你在重复填写很多配置项。在每个文件里设置相同的布局，对每篇文章添加相同的分类等等。你还需要添加自定义变量，如作者名，而这对于你博客上大部分的文章来说是相同的。
 
@@ -178,7 +178,7 @@ defaults:
 
 例如，以上所设置的默认值表明，所有的文章都会使用 `my-site` 布局；任何在 `projects/` 文件夹下的 html 文件会使用 `project` 布局；拥有者为 `Mr. Hyde` 的页面的布局也被设为 `project` 。
 
-<b><font color=#0099ff>通过上面的文字可以看出，posts代表的就是文章，pages代表的就是html页面。</font><b>
+<b><font color=DodgerBlue>通过上面的文字可以看出，posts代表的就是文章，pages代表的就是html页面。</font><b>
 
 ```yaml
 collections:
@@ -196,9 +196,9 @@ defaults:
 
 在上面这个例子中，在集合（Collections）中命名为 `my_collection` 的集合的布局被设为 `default` 。
 
-<b><font color=#0099ff size=5>通配符模式在默认值中的应用</font><b>
+<b><font color=DodgerBlue size=5>通配符模式在默认值中的应用</font><b>
 
-<font color=#0099ff>你还可以在设置默认值时使用通配符。 比如，为`section`文件夹内的任意一个子文件件中的 `special-page.html` 设置`specific-layout`布局。（需要至少jekyll 3.7.0版本）</font>
+<font color=DodgerBlue>你还可以在设置默认值时使用通配符。 比如，为`section`文件夹内的任意一个子文件件中的 `special-page.html` 设置`specific-layout`布局。（需要至少jekyll 3.7.0版本）</font>
 
 ```yaml
 collections:
@@ -244,7 +244,7 @@ The post text goes here...
 
 在站点建立时，`projects/foo_project.md` 的布局会是 `foobar`而不是`project` ，`author` 是 `John Smith`而不是 `Mr. Hyde` 。
 
-<b><font color=#0099ff>换言之就是说，`_config.yml`中定义的默认值其实优先级是最低的。</font><b>
+<b><font color=DodgerBlue>换言之就是说，`_config.yml`中定义的默认值其实优先级是最低的。</font><b>
 
 
 
@@ -254,7 +254,7 @@ Jekyll 默认使用以下的配置运行，当然你也可以在配置文件或�
 
 ##### 有两个 kramdown 的选项不支持
 
-注意，由于没有被包含到 kramdown HTML 转换器中， Jekyll 当前不支持<b>`remove_block_html_tags`<b> 和 <b>`remove_span_html_tags`<b>。<b><font color=#0099ff>啥玩意？不支持就不支持呗。</font><b>
+注意，由于没有被包含到 kramdown HTML 转换器中， Jekyll 当前不支持<b>`remove_block_html_tags`<b> 和 <b>`remove_span_html_tags`<b>。<b><font color=DodgerBlue>啥玩意？不支持就不支持呗。</font><b>
 
 ```yaml
 # 目录结构
@@ -328,7 +328,7 @@ kramdown:
     coderay_css:               style
 ```
 
-<b><font color=#0099ff size=4>以上一大坨，之所以叫默认设置，就是说你不去改它，世界也运行得挺美好。因此，除非你有确凿的需求，那么就保留默认即可。</font><b><br><br>
+<b><font color=DodgerBlue size=4>以上一大坨，之所以叫默认设置，就是说你不去改它，世界也运行得挺美好。因此，除非你有确凿的需求，那么就保留默认即可。</font><b><br><br>
 
 
 
