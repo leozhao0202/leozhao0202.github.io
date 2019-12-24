@@ -19,6 +19,10 @@ mathjax: true
 
 Jekyll允许你很轻松的设计你的网站，这很大程度上归功于灵活强大的配置功能。既可以在网站根目录下的 `_config.yml` 文件中配置，也可以通过**命令行的标记**来配置（**<font color=#0099ff>就是说，可以在命令框（CMD）中通过类似`jekyll serve --trace`这样的语句来配置</font>**）。
 
+~~~
+
+~~~
+
 
 ### 全局配置（Global Configuration）
 
