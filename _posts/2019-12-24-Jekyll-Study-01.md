@@ -58,4 +58,4 @@ Jekyll 的核心其实是一个<b>文本转换引擎<b>。
 | <b>`_site`<b>                                              | 当 Jekyll 完成转换，就会将生成的页面放在这里（默认）。最好将这个目录放进你的 `.gitignore` 文件中。<br>关于这个`.gitignore` 文件，文件名中有`git`，就说明它是Git要用到的文件，这个文件的作用就是为了通知Git哪些文件不需要添加到版本管理中。<b>简单来说，`.gitignore` 文件中记录的文件夹或文件将不会同步到Github中去。<b> |
 | <b>`.jekyll-metadata`<b>                                   | 该文件帮助 Jekyll 跟踪哪些文件从上次建立站点开始到现在没有被修改，哪些文件需要在下一次站点建立时重新生成。该文件不会被包含在生成的站点中。所以最好将它加入到你的 `.gitignore` 文件中去。 |
 | <b>`index.html` and other HTML, Markdown, Textile files<b> | 如果这些文件中包含 <YAML 头信息> 部分，Jekyll 就会自动将它们进行转换。当然，其他的如 `.html`, `.markdown`, `.md`, 或者 `.textile` 等在你的站点根目录下或者不是以上提到的目录中的文件也会被转换。 |
-| <b>Other Files/Folders<b>                                  | 其他一些未被提及的目录和文件如 `css` 还有 `images` 文件夹，`favicon.ico` 等文件都将被完全拷贝到生成的 site 中。 |
+|                                                            |                                                              |
