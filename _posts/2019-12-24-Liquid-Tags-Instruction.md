@@ -10,7 +10,7 @@ catalog: true                       # 是否归档
 tags:                               #标签
 
     - Liquid
-excerpt_separator: <!--more--> 
+excerpt: Liquid末班语言的基本简介，从官网扒过来做查询资料的。 
 mathjax: true
 ---
 
@@ -20,7 +20,6 @@ mathjax: true
 
 [TOC]
 
-<!--more-->
 
 # 注释
 
@@ -39,7 +38,6 @@ is turned into a comment.
 Anything you put between  tags
 is turned into a comment.
 ```
-
 
 
 # 控制流

@@ -10,14 +10,12 @@ catalog: true                       # 是否归档
 tags:                               #标签
     - 技术控
     - Jekyll
-excerpt_separator: <!--more--> 
+excerpt: 本文讲的东西比较多，但基本上都是基础的基础。我们先从根儿上了解了解吧。
+mathjax: true 
 ---
-
-
 
 Jekyll允许你很轻松的设计你的网站，这很大程度上归功于灵活强大的配置功能。既可以在网站根目录下的 `_config.yml` 文件中配置，也可以通过<b>命令行的标记<b>来配置（<b><font color=#0099ff>就是说，可以在命令框（CMD）中通过类似`jekyll serve --trace`这样的语句来配置</font><b>）。
 
-<!--more-->
 ### 全局配置（Global Configuration）
 
 下表中列举了所有 Jekyll 可用的设置，和多种多样的 `选项Options` (配置文件中) 及 `标记Tags` (命令行中)。

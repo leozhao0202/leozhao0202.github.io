@@ -10,7 +10,7 @@ catalog: true                       # 是否归档
 tags:                               #标签
 
     - Liquid
-excerpt_separator: <!--more--> 
+excerpt: Liquid末班语言的基本简介，从官网扒过来做查询资料的。 
 mathjax: true
 ---
 
@@ -21,7 +21,7 @@ mathjax: true
 # 简介
 
 Liquid 代码可分为 [**对象（object）**](https://liquid.bootcss.com/basics/introduction/#objects)、[**标记（tag）**](https://liquid.bootcss.com/basics/introduction/#tags) 和 [**过滤器（filter）**](https://liquid.bootcss.com/basics/introduction/#filters)。
-<!--more-->
+
 ## 对象
 
 **对象** 告诉 Liquid 在页面的哪个位置展示内容。对象和变量名由双花括号标识：`{{` 和 `}}`。

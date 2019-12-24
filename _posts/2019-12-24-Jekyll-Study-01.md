@@ -10,16 +10,14 @@ catalog: true                       # 是否归档
 tags:                               #标签
     - 技术控
     - Jekyll
-excerpt_separator: <!--more-->
+excerpt: Jekyll是一个很有意思的，怎么说呢？工具？
 mathjax: true
 ---
 
-Jekyll是一个很有意思的，怎么说呢？工具？
 它的可塑性极强，事实上，网上有无数的Jekyll主题，无数人在其上发挥着各种奇思妙想。这种事情想想还真有意思，想必技术控都无法免俗吧。
 
 由此，就让我们扒掉它的外衣、内衣，仔细研究研究它的身体吧，HIA HIA HIA
 
-<!--more-->
 ### 目录结构
 
 Jekyll 的核心其实是一个<b>文本转换引擎<b>。
