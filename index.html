@@ -3,6 +3,7 @@ layout: default
 home-title: 赵楠的故纸堆
 description: 这里是我的记忆深处
 header-img: assets/img/banner.jpg
+qrcode-img: assets/img/qrcode.png
 ---
 
 {% include header.html %}
@@ -77,7 +78,7 @@ header-img: assets/img/banner.jpg
                 </ul>
                 {% endif %}
             </section>
-
+            
             {% if site.recommend-tags and site.tags.size>0 %}
             <section class="tags-card">
                 {% for tag in site.tags %}
@@ -88,6 +89,16 @@ header-img: assets/img/banner.jpg
                 {% endfor %}
             </section>
             {% endif %}
+
+            {% if site.QRcode %}
+            <section class="sns-links" >
+                <div class="avatar" align="center">
+                    手机用户可扫描二维码<br><br>
+                <img src="{{ page.qrcode-img | relative_url }}" alt="">
+                </div>
+            </section>
+            {% endif %}
+            
         </div>
 
         {% if site.search %}
