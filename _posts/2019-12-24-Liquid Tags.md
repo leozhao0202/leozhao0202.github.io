@@ -17,14 +17,14 @@ tags:        Liquid
 
 输入
 
-```
+```Liquid
 Anything you put between {% comment %} and {% endcomment %} tags
 is turned into a comment.
 ```
 
 输出
 
-```
+```Liquid
 Anything you put between  tags
 is turned into a comment.
 ```
@@ -40,7 +40,7 @@ is turned into a comment.
 
 输入
 
-```
+```Liquid
 {% if product.title == 'Awesome Shoes' %}
   These shoes are awesome!
 {% endif %}
@@ -48,7 +48,7 @@ is turned into a comment.
 
 输出
 
-```
+```Liquid
 These shoes are awesome!
 ```
 
@@ -58,7 +58,7 @@ These shoes are awesome!
 
 输入
 
-```
+```Liquid
 {% unless product.title == 'Awesome Shoes' %}
   These shoes are not awesome.
 {% endunless %}
@@ -66,13 +66,13 @@ These shoes are awesome!
 
 输出
 
-```
+```Liquid
 These shoes are not awesome.
 ```
 
 和如下实例的执行结果一致：
 
-```
+```Liquid
 {% if product.title != 'Awesome Shoes' %}
   These shoes are not awesome.
 {% endif %}
@@ -84,7 +84,7 @@ These shoes are not awesome.
 
 输入
 
-```
+```Liquid
 <!-- If customer.name = 'anonymous' -->
 {% if customer.name == 'kevin' %}
   Hey Kevin!
@@ -97,7 +97,7 @@ These shoes are not awesome.
 
 输出
 
-```
+```Liquid
 Hey Anonymous!
 ```
 
@@ -107,7 +107,7 @@ Hey Anonymous!
 
 输入
 
-```
+```Liquid
 {% assign handle = 'cake' %}
 {% case handle %}
   {% when 'cake' %}
@@ -121,7 +121,7 @@ Hey Anonymous!
 
 输出
 
-```
+```Liquid
 This is a cake
 ```
 
@@ -137,7 +137,7 @@ This is a cake
 
 输入
 
-```
+```Liquid
   {% for product in collection.products %}
     {{ product.title }}
   {% endfor %}
@@ -145,7 +145,7 @@ This is a cake
 
 输出
 
-```
+```Liquid
 hat shirt pants
 ```
 
@@ -155,7 +155,7 @@ hat shirt pants
 
 输入
 
-```
+```Liquid
 {% for i in (1..5) %}
   {% if i == 4 %}
     {% break %}
@@ -167,7 +167,7 @@ hat shirt pants
 
 输出
 
-```
+```Liquid
 1 2 3
 ```
 
@@ -177,7 +177,7 @@ hat shirt pants
 
 输入
 
-```
+```Liquid
 {% for i in (1..5) %}
   {% if i == 4 %}
     {% continue %}
@@ -189,7 +189,7 @@ hat shirt pants
 
 输出
 
-```
+```Liquid
 1 2 3   5
 ```
 
@@ -201,7 +201,7 @@ hat shirt pants
 
 输入
 
-```
+```Liquid
 <!-- if array = [1,2,3,4,5,6] -->
 {% for item in array limit:2 %}
   {{ item }}
@@ -210,7 +210,7 @@ hat shirt pants
 
 输出
 
-```
+```Liquid
 1 2
 ```
 
@@ -220,7 +220,7 @@ hat shirt pants
 
 输入
 
-```
+```Liquid
 <!-- if array = [1,2,3,4,5,6] -->
 {% for item in array offset:2 %}
   {{ item }}
@@ -229,7 +229,7 @@ hat shirt pants
 
 输出
 
-```
+```Liquid
 3 4 5 6
 ```
 
@@ -239,7 +239,7 @@ hat shirt pants
 
 输入
 
-```
+```Liquid
 {% for i in (3..5) %}
   {{ i }}
 {% endfor %}
@@ -252,7 +252,7 @@ hat shirt pants
 
 输出
 
-```
+```Liquid
 3 4 5
 1 2 3 4
 ```
@@ -263,7 +263,7 @@ hat shirt pants
 
 输入
 
-```
+```Liquid
 <!-- if array = [1,2,3,4,5,6] -->
 {% for item in array reversed %}
   {{ item }}
@@ -272,7 +272,7 @@ hat shirt pants
 
 输出
 
-```
+```Liquid
 6 5 4 3 2 1
 ```
 
@@ -284,7 +284,7 @@ hat shirt pants
 
 输入
 
-```
+```Liquid
 {% cycle 'one', 'two', 'three' %}
 {% cycle 'one', 'two', 'three' %}
 {% cycle 'one', 'two', 'three' %}
@@ -293,7 +293,7 @@ hat shirt pants
 
 输出
 
-```
+```Liquid
 one
 two
 three
@@ -315,7 +315,7 @@ one
 
 输入
 
-```
+```Liquid
 <table>
 {% tablerow product in collection.products %}
   {{ product.title }}
@@ -325,7 +325,7 @@ one
 
 输出
 
-```
+```Liquid
 <table>
   <tr class="row1">
     <td class="col1">
@@ -358,7 +358,7 @@ one
 
 输入
 
-```
+```Liquid
 {% tablerow product in collection.products cols:2 %}
   {{ product.title }}
 {% endtablerow %}
@@ -366,7 +366,7 @@ one
 
 输出
 
-```
+```Liquid
 <table>
   <tr class="row1">
     <td class="col1">
@@ -399,7 +399,7 @@ one
 
 在执行到指定的脚标（index）之后退出 tablerow 。
 
-```
+```Liquid
 {% tablerow product in collection.products cols:2 limit:3 %}
   {{ product.title }}
 {% endtablerow %}
@@ -409,7 +409,7 @@ one
 
 在指定的脚标（index）之后开始执行 tablerow 。
 
-```
+```Liquid
 {% tablerow product in collection.products cols:2 offset:3 %}
   {{ product.title }}
 {% endtablerow %}
@@ -419,7 +419,7 @@ one
 
 定义循环执行的范围。可利用数字和变量来定义执行范围。
 
-```
+```Liquid
 <!--variable number example-->
 
 {% assign num = 4 %}
@@ -446,7 +446,7 @@ one
 
 输入
 
-```
+```Liquid
 {% raw %}
   In Handlebars, {{ this }} will be HTML-escaped, but
   {{{ that }}} will not.
@@ -455,7 +455,7 @@ one
 
 输出
 {% raw %}
-```
+```Liquid
 In Handlebars, {{ this }} will be HTML-escaped, but {{{ that }}} will not.
 ```
 
@@ -471,7 +471,7 @@ In Handlebars, {{ this }} will be HTML-escaped, but {{{ that }}} will not.
 
 输入
 
-```
+```Liquid
 {% assign my_variable = false %}
 {% if my_variable != true %}
   This statement is valid.
@@ -480,7 +480,7 @@ In Handlebars, {{ this }} will be HTML-escaped, but {{{ that }}} will not.
 
 输出
 
-```
+```Liquid
   This statement is valid.
 ```
 
@@ -488,14 +488,14 @@ In Handlebars, {{ this }} will be HTML-escaped, but {{{ that }}} will not.
 
 输入
 
-```
+```Liquid
 {% assign foo = "bar" %}
 {{ foo }}
 ```
 
 输出
 
-```
+```Liquid
 bar
 ```
 
@@ -505,14 +505,14 @@ bar
 
 输入
 
-```
+```Liquid
 {% capture my_variable %}I am being c aptured.{% endcapture %}
 {{ my_variable }}
 ```
 
 输出
 
-```
+```Liquid
 I am being captured.
 ```
 
@@ -520,7 +520,7 @@ I am being captured.
 
 输入
 
-```
+```Liquid
 {% assign favorite_food = 'pizza' %}
 {% assign age = 35 %}
 
@@ -533,7 +533,7 @@ I am {{ age }} and my favorite food is {{ favorite_food }}.
 
 输出
 
-```
+```Liquid
 I am 35 and my favourite food is pizza.
 ```
 
@@ -543,7 +543,7 @@ I am 35 and my favourite food is pizza.
 
 输入
 
-```
+```Liquid
 {% increment my_counter %}
 {% increment my_counter %}
 {% increment my_counter %}
@@ -551,7 +551,7 @@ I am 35 and my favourite food is pizza.
 
 输出
 
-```
+```Liquid
 0
 1
 2
@@ -563,7 +563,7 @@ I am 35 and my favourite food is pizza.
 
 输入
 
-```
+```Liquid
 {% assign var = 10 %}
 {% increment var %}
 {% increment var %}
@@ -573,7 +573,7 @@ I am 35 and my favourite food is pizza.
 
 输出
 
-```
+```Liquid
 0
 1
 2
@@ -586,7 +586,7 @@ I am 35 and my favourite food is pizza.
 
 输入
 
-```
+```Liquid
 {% decrement variable %}
 {% decrement variable %}
 {% decrement variable %}
@@ -594,7 +594,7 @@ I am 35 and my favourite food is pizza.
 {% endraw %}
 输出
 
-```
+```Liquid
 -1
 -2
 -3

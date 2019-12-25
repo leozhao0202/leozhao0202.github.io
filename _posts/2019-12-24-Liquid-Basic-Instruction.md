@@ -21,13 +21,13 @@ Liquid 代码可分为 [**对象（object）**](https://liquid.bootcss.com/basic
 
 输入
 
-```
+```Liquid
 {{ page.title }}
 ```
 
 输出
 
-```
+```Liquid
 Introduction
 ```
 
@@ -41,7 +41,7 @@ Introduction
 
 输入
 
-```
+```Liquid
 {% if user %}
   Hello {{ user.name }}!
 {% endif %}
@@ -49,7 +49,7 @@ Introduction
 
 输出
 
-```
+```Liquid
 Hello Adam!
 ```
 
@@ -67,13 +67,13 @@ Hello Adam!
 
 输入
 
-```
+```Liquid
 {{ "/my/fancy/url" | append: ".html" }}
 ```
 
 输出
 
-```
+```Liquid
 /my/fancy/url.html
 ```
 
@@ -81,13 +81,13 @@ Hello Adam!
 
 输入
 
-```
+```Liquid
 {{ "adam!" | capitalize | prepend: "Hello " }}
 ```
 
 输出
 
-```
+```Liquid
 Hello Adam!
 ```
 
@@ -111,7 +111,7 @@ Liquid 包含了大量逻辑（logical）和比较操作符（comparison operato
 
 例如：
 
-```
+```Liquid
 {% if product.title == "Awesome Shoes" %}
   These shoes are awesome!
 {% endif %}
@@ -119,7 +119,7 @@ Liquid 包含了大量逻辑（logical）和比较操作符（comparison operato
 
 可以在一个标记（tag）中使用多个操作符：
 
-```
+```Liquid
 {% if product.type == "Shirt" or product.type == "Shoes" %}
   This is a shirt or a pair of shoes.
 {% endif %}
@@ -129,7 +129,7 @@ Liquid 包含了大量逻辑（logical）和比较操作符（comparison operato
 
 `contains` 用于检查在一个字符串中是否存在某个子串。
 
-```
+```Liquid
 {% if product.title contains 'Pack' %}
   This product's title contains the word Pack.
 {% endif %}
@@ -137,7 +137,7 @@ Liquid 包含了大量逻辑（logical）和比较操作符（comparison operato
 
 `contains` 还可以用于检查一个字符串数组中是否存在某个字符串。
 
-```
+```Liquid
 {% if product.tags contains 'Hello' %}
   This product has been tagged with 'Hello'.
 {% endif %}
@@ -161,7 +161,7 @@ Liquid 包含了大量逻辑（logical）和比较操作符（comparison operato
 
 如下例，字符串 “Tobi” 虽不是布尔类型，但是其在条件判断时被当做真值（truthy）：
 
-```
+```Liquid
 {% assign tobi = "Tobi" %}
 
 {% if tobi %}
@@ -173,7 +173,7 @@ Liquid 包含了大量逻辑（logical）和比较操作符（comparison operato
 
 输入
 
-```
+```Liquid
 {% if settings.fp_heading %}
   <h1>{{ settings.fp_heading }}</h1>
 {% endif %}
@@ -181,7 +181,7 @@ Liquid 包含了大量逻辑（logical）和比较操作符（comparison operato
 
 输出
 
-```
+```Liquid
 <h1></h1>
 ```
 
@@ -226,7 +226,7 @@ Liquid 对象的类型可以是以下五种：
 
 将变量的值包裹在单引号或双引号之中就声明了一个字符串：
 
-```
+```Liquid
 {% assign my_string = "Hello World!" %}
 ```
 
@@ -234,7 +234,7 @@ Liquid 对象的类型可以是以下五种：
 
 数字类型包括浮点数和整数：
 
-```
+```Liquid
 {% assign my_int = 25 %}
 {% assign my_float = 39.756 %}
 ```
@@ -243,7 +243,7 @@ Liquid 对象的类型可以是以下五种：
 
 Booleans 类型只能是 `true` 或 `false`。布尔值千万不能加引号，否则就成为字符串了。
 
-```
+```Liquid
 {% assign foo = true %}
 {% assign bar = false %}
 ```
@@ -256,7 +256,7 @@ Nil 是一个特殊的空值，当 Liquid 代码没有可输出的结果时将�
 
 下例中，如果 user 不存在（也就是 `user` 返回 `nil`），Liquid 不输出问候语：
 
-```
+```Liquid
 {% if user %}
   Hello {{ user.name }}!
 {% endif %}
@@ -266,13 +266,13 @@ Nil 是一个特殊的空值，当 Liquid 代码没有可输出的结果时将�
 
 输入
 
-```
+```Liquid
 The current user is {{ user.name }}
 ```
 
 输出
 
-```
+```Liquid
 The current user is
 ```
 
@@ -286,7 +286,7 @@ The current user is
 
 输入
 
-```
+```Liquid
 <!-- if site.users = "Tobi", "Laura", "Tetsuro", "Adam" -->
 {% for user in site.users %}
   {{ user }}
@@ -295,7 +295,7 @@ The current user is
 
 输出
 
-```
+```Liquid
 Tobi Laura Tetsuro Adam
 ```
 
@@ -305,7 +305,7 @@ Tobi Laura Tetsuro Adam
 
 输入
 
-```
+```Liquid
 <!-- if site.users = "Tobi", "Laura", "Tetsuro", "Adam" -->
 {{ site.users[0] }}
 {{ site.users[1] }}
@@ -314,7 +314,7 @@ Tobi Laura Tetsuro Adam
 
 输出
 
-```
+```Liquid
 Tobi
 Laura
 Adam
@@ -360,7 +360,7 @@ Jekyll 版本的 Liquid 的文档在 [Templates section of Jekyll’s documentat
 
 输入
 
-```
+```Liquid
 {% assign my_variable = "tomato" %}
 {{ my_variable }}
 ```
@@ -369,7 +369,7 @@ Jekyll 版本的 Liquid 的文档在 [Templates section of Jekyll’s documentat
 
 输出
 
-```
+```Liquid
 tomato
 ```
 
@@ -377,14 +377,14 @@ tomato
 
 输入
 
-```
+```Liquid
 {%- assign my_variable = "tomato" -%}
 {{ my_variable }}
 ```
 
 输出
 
-```
+```Liquid
 tomato
 ```
 
@@ -392,7 +392,7 @@ tomato
 
 输入
 
-```
+```Liquid
 {% assign username = "John G. Chalmers-Smith" %}
 {% if username and username.size > 10 %}
   Wow, {{ username }}, you have a long name!
@@ -403,13 +403,13 @@ tomato
 
 不做空白符控制的输出
 
-```
+```Liquid
   Wow, John G. Chalmers-Smith, you have a long name!
 ```
 
 输入
 
-```
+```Liquid
 {%- assign username = "John G. Chalmers-Smith" -%}
 {%- if username and username.size > 10 -%}
   Wow, {{ username }}, you have a long name!
@@ -420,7 +420,7 @@ tomato
 
 带有空白符控制的输出
 
-```
+```Liquid
 Wow, John G. Chalmers-Smith, you have a long name!
 ```
 {% endraw %}

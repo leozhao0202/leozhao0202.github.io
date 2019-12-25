@@ -87,7 +87,7 @@ Jekyll允许你很轻松的设计你的网站，这很大程度上归功于灵�
 
 例如，在你代码的条件语句中如下设置：
 
-```
+```YAML
 { if jekyll.environment == "production" }
    { include disqus.html }
 { endif }
@@ -95,7 +95,7 @@ Jekyll允许你很轻松的设计你的网站，这很大程度上归功于灵�
 
 那么，在编译你的 Jekyll 网站时，if 条件语句块中的内容不会被执行；除非你在 build 命令中还指定了一个 `production` 环境，像这样：
 
-```
+```YAML
 JEKYLL_ENV=production jekyll build
 ```
 
@@ -127,7 +127,7 @@ Jekyll 提供了一个方法允许你在站点配置中设置这些默认值，�
 
 假设您想给站点中的所有页面和文章设置一个默认的布局。 你要将以下语句添加到你的 `_config.yml` 文件：
 
-```
+```YAML
 defaults:
   -
     scope:
@@ -142,7 +142,7 @@ defaults:
 
 在这里，我们把 `values` 应用给 `scope` 路径里的所有文件。因为路径被设为空字符串，它将会应用到你项目里的<b>全部文件</b>。有时你可能不想给项目在的每个文件都设置同一个布局，例如 css 文件，为此你可以在 `scope` 下指定 `type` 的值。
 
-```
+```YAML
 defaults:
   -
     scope:
@@ -158,7 +158,7 @@ defaults:
 
 正如前面所提到的，您还可以给 `defaults` 设置多个<b>`scope/value`</b>对。
 
-```
+```YAML
 defaults:
   -
     scope:
@@ -179,7 +179,7 @@ defaults:
 
 <b>通过上面的文字可以看出，posts代表的就是文章，pages代表的就是html页面。</b>
 
-```
+```YAML
 collections:
   - my_collection:
     output: true
@@ -199,7 +199,7 @@ defaults:
 
 你还可以在设置默认值时使用通配符。 比如，为`section`文件夹内的任意一个子文件件中的 `special-page.html` 设置`specific-layout`布局。（需要至少jekyll 3.7.0版本）
 
-```
+```YAML
 collections:
   my_collection:
     output: true
@@ -220,7 +220,7 @@ Jekyll 会应用你在 `_config.yml` 文件里 `defaults` 部分的所有配置�
 
 最后，如果你在 `_config.yml` 的 `defaults` 中设置了整个站点的默认值，那么你可以在页面或文章的文件里覆盖这些设定。你需要做的是在页面或文章的头信息里定义要覆盖的设定。例如：
 
-```
+```YAML
 # In _config.yml
 ...
 defaults:
@@ -256,7 +256,7 @@ Jekyll 默认使用以下的配置运行，当然你也可以在配置文件或�
 注意，由于没有被包含到 kramdown HTML 转换器中， Jekyll 当前不支持<b>`remove_block_html_tags`</b> 和 <b>`remove_span_html_tags`</b>。
 <br><b>啥玩意？不支持就不支持呗。</b>
 
-```
+```YAML
 # 目录结构
 source:      .
 destination: ./_site

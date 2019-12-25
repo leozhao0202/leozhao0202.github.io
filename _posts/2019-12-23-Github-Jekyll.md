@@ -51,7 +51,7 @@ tags:        技术控
 
       这个其实不需要去页面上下载，打开命令框，在命令行里输入以下命令回车即可（**确保Ruby已安装完成**）
 
-      ```
+      ```Ruby
       $ gem update --system
       ```
 
@@ -61,7 +61,7 @@ tags:        技术控
 
    4. 建立Jekyll工作文件夹（比如D:\JekyllBlogs）,打开命令框，输入命令行
 
-      ```
+      ```Bash
       cd D:\JekyllBlogs
       jekyll new myblog
       ```
