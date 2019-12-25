@@ -1,18 +1,20 @@
 ---
 layout:     post                   
 title:      YAML语言基础
-subtitle:   YAML简介 
+subtitle:   YAML 
 date:       2019-12-23
 categories: 学习笔记
 author:     Leo Zhao
-header-img: 
 catalog: true                       # 是否归档
 tags:                               #标签
+
     - YAML语言
+excerpt: YAML 是专门用来写配置文件的语言，非常简洁和强大，远比 JSON 格式方便。 
+mathjax: true
 ---
 
 
-YAML 是专门用来写配置文件的语言，非常简洁和强大，远比 JSON 格式方便。 本文转自[阮一峰的网络日志](http://www.ruanyifeng.com/blog/) - [YAML 语言教程](http://www.ruanyifeng.com/blog/2016/07/yaml.html)。
+本文转自[阮一峰的网络日志](http://www.ruanyifeng.com/blog/) - [YAML 语言教程](http://www.ruanyifeng.com/blog/2016/07/yaml.html)。
 
 ## 一、简介
 
@@ -28,10 +30,8 @@ YAML 语言（发音 /ˈjæməl/ ）的设计目标，就是方便人类读写�
 
 - 缩进的空格数目不重要，只要相同层级的元素左侧对齐即可
 
-~~~
 
 **`#` 表示注释，从这个字符一直到行尾，都会被解析器忽略。**
-
 
 
 YAML 支持的数据结构有以下三种：
@@ -41,7 +41,6 @@ YAML 支持的数据结构有以下三种：
 - 纯量（scalars）：单个的、不可再分的值
 
 以下分别介绍这三种数据结构。
-
 
 
 ## 二、对象
@@ -69,7 +68,6 @@ Yaml 也允许另一种写法，将所有键值对写成一个行内对象。
 > ```javascript
 > { hash: { name: 'Steve', foo: 'bar' } }
 > ```
-
 
 
 ## 三、数组

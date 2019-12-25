@@ -8,13 +8,12 @@ author:     Leo Zhao
 catalog: true                       # 是否归档
 tags:                               #标签
     - Liquid
-excerpt: Liquid末班语言的基本简介，从官网扒过来做查询资料的。 
+excerpt: Liquid模板语言的基本简介，从官网扒过来做查询资料的。 
 mathjax: true
 ---
 
 # Liquid Basic Instruction
 
-[:toc]
 {% raw %}
 # 简介
 

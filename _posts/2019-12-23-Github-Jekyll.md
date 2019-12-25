@@ -1,18 +1,17 @@
 ---
 layout:     post                   
 title:      Github+Jekyll 自建博客相关事项
-subtitle:   为了督促自己，先从Github上建个个人的博客吧。
+subtitle:   技术控
 date:       2019-12-23
 categories: 技术生活
 author:     Leo Zhao
-header-img: 
 catalog: true                       # 是否归档
 tags:                               #标签
     - 技术控
     - Jekyll
+excerpt: 近些日子重新开始培养热血，从研究技术开始。为了督促自己，先从Github上建个个人的博客吧。 
+mathjax: true
 ---
-
-近些日子重新开始培养热血，从研究技术开始。
 
 网上有无数此类相关的文章，讲述从如何申请Github账号，到安装Github客户端，使用Git Bash，再到本机安装Jekyll，然后同步网站。
 
@@ -34,13 +33,13 @@ tags:                               #标签
 
       *我的系统是windows，所以下载RubyInstaller*
 
-      ![ruby下载1](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/assets/img/20191223_ruby%E4%B8%8B%E8%BD%BD1.PNG?raw=true)
+      ![ruby下载1](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/_images/20191223_ruby%E4%B8%8B%E8%BD%BD1.PNG?raw=true)
 
-      ![ruby下载2](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/assets/img/20191223_ruby%E4%B8%8B%E8%BD%BD2.PNG?raw=true)
+      ![ruby下载2](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/_images/20191223_ruby%E4%B8%8B%E8%BD%BD2.PNG?raw=true)
 
       *我的系统是64位，诸位请自选*
 
-      ![ruby下载3](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/assets/img/20191223_ruby%E4%B8%8B%E8%BD%BD3.PNG?raw=true)
+      ![ruby下载3](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/_images/20191223_ruby%E4%B8%8B%E8%BD%BD3.PNG?raw=true)
 
       **注意**
 
@@ -48,7 +47,7 @@ tags:                               #标签
 
       2. Ruby安装完成后，会有一个弹出的命令框，提示安装msys64，建议**直接回车**即可，时间比较长，但一定要等，安装完命令框会自己关掉
 
-         ![20191223_installMSYS2](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/assets/img/20191223_installMSYS2.PNG?raw=true)
+         ![20191223_installMSYS2](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/_images/20191223_installMSYS2.PNG?raw=true)
 
    2. 安装Ruby Gems
 
@@ -71,11 +70,11 @@ tags:                               #标签
 
       **注意** myblog为我的博客的文件夹名，以上命令完成后，D:\JekyllBlogs文件夹内会生成一个myblog的文件夹，其内有Jekyll博客网站的的页面
 
-      ![20131223_JekyllBlog](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/assets/img/20131223_JekyllBlog.PNG?raw=true)
+      ![20131223_JekyllBlog](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/_images/20131223_JekyllBlog.PNG?raw=true)
 
 3. #### 初始化博客个人信息，修改_config.yml
 
-   ​		![20191223_config](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/assets/img/20191223_config.PNG?raw=true)
+   ​		![20191223_config](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/_images/20191223_config.PNG?raw=true)
 
 
 

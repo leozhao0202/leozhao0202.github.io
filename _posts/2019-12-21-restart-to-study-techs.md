@@ -5,15 +5,14 @@ subtitle:   40岁迷惘老男人的遐思
 date:       2019-12-21 
 categories: 生活感悟
 author:     Leo Zhao
-header-img: 
 catalog: true                       # 是否归档
 tags:                               #标签
     - 生活
+excerpt: 这是我的第一篇博客。既然要讲人生，那就得足够酸啊~~ 
+mathjax: true
 ---
 
 ## Hey
-
-这是我的第一篇博客。既然要讲人生，那就得足够酸啊~~
 
 毕业后，我一直在非IT企业做IT，从系统分析员一直做到了IT经理，期间经历无数，很难细细说清。
 
@@ -44,7 +43,7 @@ tags:                               #标签
 于是就有了这篇小酸文，记录下当前的心情，同时也是一块路标，继续前行吧！
 
 
-##### Github + Jekyll
+### Github + Jekyll
 
 
 
