@@ -37,9 +37,7 @@ search: true
 nightMode: true
 
 # Comments 评论功能
-comment_gitment_repo: leozhao0202.github.io
-comment_gitment_clientId: 6e04c01032c117e3c2db
-comment_gitment_clientSecret: 1b2b470871a9a9055646f223a82c1f901a9fc07d
+gitalk_shortname: leozhao0202
 
 # MathJax 公式支持 by Ray-Eldath
 mathjax: true
