@@ -1,15 +1,11 @@
 ---
-layout:     post                   
-title:      Liquid模板语言（2）
-subtitle:   Liquid标记Tags介绍 
-date:       2019-12-24
-categories: 学习笔记
-author:     Leo Zhao
-catalog: true                       # 是否归档
-tags:                               #标签
-    - Liquid
-excerpt: Liquid标记Tags简介，想要顺畅的在Github发表文章，得好好读读。 
-mathjax: true
+layout:      post                   
+title:       Liquid模板语言（2）
+subtitle:    Liquid标记Tags简介，想要顺畅的在Github发表文章，得好好读读。 
+date:        2019-12-24
+author:      Leo Zhao 
+categories:  学习笔记 
+tags:        Liquid    
 ---
 
 # Liquid Tags

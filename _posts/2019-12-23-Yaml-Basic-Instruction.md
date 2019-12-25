@@ -1,18 +1,14 @@
 ---
-layout:     post                   
-title:      YAML语言基础
-subtitle:   YAML 
-date:       2019-12-23
-categories: 学习笔记
-author:     Leo Zhao
-catalog: true                       # 是否归档
-tags:                               #标签
-
-    - YAML语言
-excerpt: YAML 是专门用来写配置文件的语言，非常简洁和强大，远比 JSON 格式方便。 
-mathjax: true
+layout:      post                   
+title:       YAML语言基础
+subtitle:    YAML 老牛B了，您要不要看看先~
+date:        2019-12-23
+author:      Leo Zhao 
+categories:  学习笔记 
+tags:        YAML语言
 ---
 
+YAML 是专门用来写配置文件的语言，非常简洁和强大，远比 JSON 格式方便。 
 
 本文转自[阮一峰的网络日志](http://www.ruanyifeng.com/blog/) - [YAML 语言教程](http://www.ruanyifeng.com/blog/2016/07/yaml.html)。
 

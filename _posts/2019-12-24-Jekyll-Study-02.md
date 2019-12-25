@@ -1,18 +1,15 @@
 ---
-layout:     post                   
-title:      Jekyll 研究笔记（二）
-subtitle:   本章主要讲Jekyll配置以及本地服务运行参数
-date:       2019-12-24
-categories: 技术生活
-author:     Leo Zhao
-catalog: true                       # 是否归档
-tags:                               #标签
-    - 技术控
-    - Jekyll
-excerpt: 本文讲的东西比较多，但基本上都是基础的基础。我们先从根儿上了解了解吧。
-mathjax: true 
+layout:      post                   
+title:       Jekyll 研究笔记（二）
+subtitle:    本章主要讲Jekyll配置以及本地服务运行参数
+date:        2019-12-24
+author:      Leo Zhao 
+categories:  技术生活 
+tags:        技术控
+             Jekyll
 ---
 
+本文讲的东西比较多，但基本上都是基础的基础。我们先从根儿上了解了解吧。
 
 Jekyll允许你很轻松的设计你的网站，这很大程度上归功于灵活强大的配置功能。既可以在网站根目录下的 `_config.yml` 文件中配置，也可以通过<b>命令行的标记</b>来配置（<b>就是说，可以在命令框（CMD）中通过类似`jekyll serve --trace`这样的语句来配置</b>）。
 
@@ -33,7 +30,7 @@ Jekyll允许你很轻松的设计你的网站，这很大程度上归功于灵�
 | <b>Encoding</b><br/>设置文件的编码，仅 Ruby 1.9 以上可用。2.0.0　版本以后默认值为 utf-8，之前版本默认值为 nil，使用 Ruby 默认的 `ASCII-8BIT`。可以用命令 `ruby -e 'puts Encoding::list.join("\n")'` 查看 Ruby 可用的编码。 | `encoding: ENCODING`                                         |
 | <b>Defaults</b><br/>设置 [YAML 头信息](http://jekyllcn.com/docs/frontmatter/) 的默认值。<b>这个以后会大讲特讲的。</b> | [详细](http://jekyllcn.com/docs/configuration/#front-matter-defaults) |
 
-##### Destination 文件夹会在站点建立时被清理
+#### Destination 文件夹会在站点建立时被清理
 
 <b>`<destination>`</b> 的内容默认<b>在站点建立时会被自动清理</b>。不是你创建的文件和文件夹会被删除。你想在 `<destination>` 保留的文件和文件夹应在 `<keep_files>` 里指定。
 
@@ -57,7 +54,7 @@ Jekyll允许你很轻松的设计你的网站，这很大程度上归功于灵�
 | <b>Force polling</b><br/>强制使用轮询。                         | `--force_polling`                      |
 | <b>Verbose output</b><br/>显示详细输出。                        | `-V, --verbose`                        |
 | <b>Silence Output</b><br/>在编译期间不显示的正常输出。          | `-q, --quiet`                          |
-| <b>Incremental build<b><br/>启用实验特性 incremental build。Incremental build 只重建修改过的 posts 和 pages，对大型网站有显著的性能提升，但在特定情况下也会影响网站生成。 | `incremental: BOOL` `-I, --incremental` |
+| <b>Incremental build</b><br/>启用实验特性 incremental build。Incremental build 只重建修改过的 posts 和 pages，对大型网站有显著的性能提升，但在特定情况下也会影响网站生成。 | `incremental: BOOL` `-I, --incremental` |
 | <b>Liquid profiler</b><br/>生成一个Liquid概述文档来帮助你发现性能瓶颈 | `profile: BOOL` `--profile`             |
 
 
@@ -78,7 +75,7 @@ Jekyll允许你很轻松的设计你的网站，这很大程度上归功于灵�
 | <b>X.509 (SSL) Private Key</b><br/>SSL私钥                      | `--ssl-key`                       |
 | <b>X.509 (SSL) Certificate</b><br/>SSL公证                      | `--ssl-cert`                      |
 
-##### 不要在配置文件中使用 tab 制表符，
+#### 不要在配置文件中使用 tab 制表符，
 
 这将造成解析错误，或倒回到默认设置。请使用空格替代。
 
@@ -90,7 +87,7 @@ Jekyll允许你很轻松的设计你的网站，这很大程度上归功于灵�
 
 例如，在你代码的条件语句中如下设置：
 
-```java
+```
 { if jekyll.environment == "production" }
    { include disqus.html }
 { endif }
@@ -98,7 +95,7 @@ Jekyll允许你很轻松的设计你的网站，这很大程度上归功于灵�
 
 那么，在编译你的 Jekyll 网站时，if 条件语句块中的内容不会被执行；除非你在 build 命令中还指定了一个 `production` 环境，像这样：
 
-```java
+```
 JEKYLL_ENV=production jekyll build
 ```
 
@@ -130,7 +127,7 @@ Jekyll 提供了一个方法允许你在站点配置中设置这些默认值，�
 
 假设您想给站点中的所有页面和文章设置一个默认的布局。 你要将以下语句添加到你的 `_config.yml` 文件：
 
-```yaml
+```
 defaults:
   -
     scope:
@@ -145,7 +142,7 @@ defaults:
 
 在这里，我们把 `values` 应用给 `scope` 路径里的所有文件。因为路径被设为空字符串，它将会应用到你项目里的<b>全部文件</b>。有时你可能不想给项目在的每个文件都设置同一个布局，例如 css 文件，为此你可以在 `scope` 下指定 `type` 的值。
 
-```yaml
+```
 defaults:
   -
     scope:
@@ -161,7 +158,7 @@ defaults:
 
 正如前面所提到的，您还可以给 `defaults` 设置多个<b>`scope/value`</b>对。
 
-```yaml
+```
 defaults:
   -
     scope:
@@ -182,7 +179,7 @@ defaults:
 
 <b>通过上面的文字可以看出，posts代表的就是文章，pages代表的就是html页面。</b>
 
-```yaml
+```
 collections:
   - my_collection:
     output: true
@@ -202,7 +199,7 @@ defaults:
 
 你还可以在设置默认值时使用通配符。 比如，为`section`文件夹内的任意一个子文件件中的 `special-page.html` 设置`specific-layout`布局。（需要至少jekyll 3.7.0版本）
 
-```yaml
+```
 collections:
   my_collection:
     output: true
@@ -223,7 +220,7 @@ Jekyll 会应用你在 `_config.yml` 文件里 `defaults` 部分的所有配置�
 
 最后，如果你在 `_config.yml` 的 `defaults` 中设置了整个站点的默认值，那么你可以在页面或文章的文件里覆盖这些设定。你需要做的是在页面或文章的头信息里定义要覆盖的设定。例如：
 
-```yaml
+```
 # In _config.yml
 ...
 defaults:
@@ -259,7 +256,7 @@ Jekyll 默认使用以下的配置运行，当然你也可以在配置文件或�
 注意，由于没有被包含到 kramdown HTML 转换器中， Jekyll 当前不支持<b>`remove_block_html_tags`</b> 和 <b>`remove_span_html_tags`</b>。
 <br><b>啥玩意？不支持就不支持呗。</b>
 
-```yaml
+```
 # 目录结构
 source:      .
 destination: ./_site

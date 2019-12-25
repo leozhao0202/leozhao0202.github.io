@@ -1,17 +1,15 @@
 ---
-layout:     post                   
-title:      Github+Jekyll 自建博客相关事项
-subtitle:   技术控
-date:       2019-12-23
-categories: 技术生活
-author:     Leo Zhao
-catalog: true                       # 是否归档
-tags:                               #标签
-    - 技术控
-    - Jekyll
-excerpt: 近些日子重新开始培养热血，从研究技术开始。为了督促自己，先从Github上建个个人的博客吧。 
-mathjax: true
+layout:      post                   
+title:       Github+Jekyll 自建博客相关事项
+subtitle:    吃了吗，您？没呐。 那.....先建个博客吧！
+date:        2019-12-23
+author:      Leo Zhao 
+categories:  技术生活 
+tags:        技术控
+             Jekyll
 ---
+
+近些日子重新开始培养热血，从研究技术开始。为了督促自己，先从Github上建个个人的博客吧。 
 
 网上有无数此类相关的文章，讲述从如何申请Github账号，到安装Github客户端，使用Git Bash，再到本机安装Jekyll，然后同步网站。
 

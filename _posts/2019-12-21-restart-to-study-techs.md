@@ -1,18 +1,16 @@
 ---
-layout:     post                   
-title:      重新开始研究技术的一点感想！ 
-subtitle:   40岁迷惘老男人的遐思  
-date:       2019-12-21 
-categories: 生活感悟
-author:     Leo Zhao
-catalog: true                       # 是否归档
-tags:                               #标签
-    - 生活
-excerpt: 这是我的第一篇博客。既然要讲人生，那就得足够酸啊~~ 
-mathjax: true
+layout:      post                   
+title:       重新开始研究技术的一点感想！ 
+subtitle:    40岁迷惘理科男的遐思  
+date:        2019-12-21 
+author:      Leo Zhao 
+categories:  生活感悟 
+tags:        生活
 ---
 
-## Hey
+## Hey Dude， don't make it bad
+
+这是我的第一篇博客。既然要讲人生，那就得足够酸啊~~ 
 
 毕业后，我一直在非IT企业做IT，从系统分析员一直做到了IT经理，期间经历无数，很难细细说清。
 
