@@ -4,6 +4,7 @@ title:       Jekyll 研究笔记（二）
 subtitle:    本章主要讲Jekyll配置以及本地服务运行参数
 date:        2019-12-24
 author:      Leo Zhao 
+banner_img:  assets/img/jekyll1.jpg
 categories:  技术生活 
 tags:        技术控
              Jekyll

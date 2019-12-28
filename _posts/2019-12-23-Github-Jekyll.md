@@ -4,6 +4,7 @@ title:       Github+Jekyll 自建博客相关事项
 subtitle:    吃了吗，您？没呐。 那.....先建个博客吧！
 date:        2019-12-23
 author:      Leo Zhao 
+banner_img:  assets/img/techs1.jpg
 categories:  技术生活 
 tags:        技术控
              Jekyll

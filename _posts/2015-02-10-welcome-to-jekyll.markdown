@@ -4,6 +4,7 @@ title:       "hello jekyll!"
 subtitle:    嗯，这是啥？  
 date:        2015-02-10 15:14:54
 author:      Leo Zhao 
+banner_img:  assets/img/jekyll1.jpg
 categories:  技术生活
 tags:        Jekyll
 ---

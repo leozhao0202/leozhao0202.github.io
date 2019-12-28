@@ -4,6 +4,7 @@ title:       YAML语言基础
 subtitle:    YAML 老牛B了，您要不要看看先~
 date:        2019-12-23
 author:      Leo Zhao 
+banner_img:  assets/img/yaml1.jpg
 categories:  学习笔记 
 tags:        YAML语言
 ---

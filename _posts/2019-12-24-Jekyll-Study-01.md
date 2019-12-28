@@ -4,6 +4,7 @@ title:       Jekyll 研究笔记（一）
 subtitle:    使用Github+Jekyll建站后，自然会产生将其风格化的欲望
 date:        2019-12-24
 author:      Leo Zhao 
+banner_img:  assets/img/jekyll1.jpg
 categories:  技术生活 
 tags:        技术控
              Jekyll

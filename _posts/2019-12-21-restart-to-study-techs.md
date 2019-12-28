@@ -4,6 +4,7 @@ title:       重新开始研究技术的一点感想！
 subtitle:    40岁迷惘理科男的遐思  
 date:        2019-12-21 
 author:      Leo Zhao 
+banner_img:  assets/img/life1.jpg
 categories:  生活感悟 
 tags:        生活
 ---

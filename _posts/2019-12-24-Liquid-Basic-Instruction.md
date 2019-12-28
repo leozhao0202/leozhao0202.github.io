@@ -4,6 +4,7 @@ title:       Liquid模板语言（1）
 subtitle:    Liquid模板语言的基本简介，从官网扒过来做查询资料的。 
 date:        2019-12-24 
 author:      Leo Zhao 
+banner_img:  assets/img/liquid1.jpg
 categories:  学习笔记 
 tags:        Liquid 
 ---
