@@ -77,7 +77,7 @@ tags:        技术控
 
    `# Share`：这个是第三方分享系统Share.js，支持以下社交站点。
 
-![shareImg](../assets/img/shareImg.png)
+![shareImg](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/assets/img/shareImg.png?raw=true)
 
    `#statistic analysis 统计代码`：原主题未添加统计模块，因此我在此增加了百度统计（谷歌的统计由于众所周知的原因是访问不了的......），详情请参考所链接文章[Jekyll搭建博客并添加百度统计](https://www.jianshu.com/p/9a062041394e)
 
@@ -209,7 +209,7 @@ qrcode-img: assets/img/qrcode.png
 
    下面紧接着就是代码高亮的问题，请见下图。
 
-![highlighter_problem](../assets/img/highlighter_problem.PNG)
+![highlighter_problem](https://github.com/leozhao0202/leozhao0202.github.io/blob/master/assets/img/highlighter_problem.PNG?raw=true)
 
    这是个啥呀！可以说是啥都看不见啊！这个问题搞了好久，尝试修改css，也不行。
 
