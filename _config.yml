@@ -47,7 +47,7 @@ social-share: true
 social-share-items: ['wechat', 'weibo', 'douban']
 
 # QRcode
-QRcode: leozhao0202.github.io
+QRcode: true
 
 # theme color 主题皮肤
 theme-color: 'default'  # pink or default
