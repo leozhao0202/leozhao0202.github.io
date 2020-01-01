@@ -215,9 +215,9 @@ qrcode-img: assets/img/qrcode.png
 
    嗯，感觉主题所带的代码高亮插件prism.js没起作用啊。最后，还是上[prism的官网](https://prismjs.com/)下载了最新的js和css，才最终搞定。
 
-### 6. 未竟事宜
+### 6. 文章中的字体颜色
 
-   我一直没搞定的就是文章中字体颜色的问题，事实上我在本地通过Jekyll预览时，以下代码是没问题的，可以正确显示字体颜色，但是同步到Github后就不行了，也许是Github不支持吧。
+   增加html中关于字体的代码即可。
 
 <font color="navy">这段字应该是深蓝色的。</font>
 
